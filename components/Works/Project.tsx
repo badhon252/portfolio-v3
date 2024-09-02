@@ -1,18 +1,18 @@
-import Image from "next/image"
-import Link from "next/link"
-import Icons from "./Icons"
+import Image from "next/image";
+import Link from "next/link";
+import Icons from "./Icons";
 
 type IconType = {
-  src: string
-  height: number
-  width: number
-}
+  src: string;
+  height: number;
+  width: number;
+};
 
 interface ProjectProps {
-  img: any
-  title: string
-  desc: string
-  icon: IconType[]
+  img: any;
+  title: string;
+  desc: string;
+  icon: IconType[];
 }
 
 export default function Project({ img, title, desc, icon }: ProjectProps) {
@@ -31,7 +31,9 @@ export default function Project({ img, title, desc, icon }: ProjectProps) {
 
       <div className="product-details flex flex-col items-start text-left md:basis-2/5  md:items-end md:text-right">
         <div className="">
-          <h1 className="my-4 text-2xl font-bold md:mb-6 md:text-4xl">{title}</h1>
+          <h1 className="my-4 text-2xl font-bold md:mb-6 md:text-4xl">
+            {title}
+          </h1>
           <p className="description mb-4 text-sm md:text-base">{desc}</p>
           <div className="tech-stack mb-4">
             <Icons icons={icon} />
@@ -56,5 +58,5 @@ export default function Project({ img, title, desc, icon }: ProjectProps) {
         </ul>
       </div>
     </section>
-  )
+  );
 }
