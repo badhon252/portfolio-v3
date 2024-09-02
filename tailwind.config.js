@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { pick, omit } = require("lodash")
-const colors = require("tailwindcss/colors")
-const defaultTheme = require("tailwindcss/defaultTheme")
+const { pick, omit } = require("lodash");
+const colors = require("tailwindcss/colors");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -14,6 +14,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class", // or 'media' for OS-based dark mode
   theme: {
     extend: {
       colors: {
@@ -29,6 +30,9 @@ module.exports = {
           800: "#1e40af",
           900: "#1e3a8a",
         },
+        bg: "var(--background-color)",
+        text: "var(--text-color)",
+        accent: "var(--accent-color)",
       },
       fontFamily: {
         body: [
@@ -87,4 +91,4 @@ module.exports = {
   future: {
     hoverOnlyWhenSupported: true,
   },
-}
+};

@@ -1,20 +1,21 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 
 interface CaseStudyProps {
-  img: string
-  title: string
-  overview: string
-  objectives: string
-  approach: string
-  challenges: string
-  results: string
+  img: string;
+  title: string;
+  overview: string;
+  objectives: string;
+  approach: string;
+  challenges: string;
+  results: string;
 }
 
 const caseStudy: CaseStudyProps = {
   img: "/path/to/your/image.jpg", // Update with your image path
   title: "Innovative Project Management Tool",
-  overview: "A comprehensive tool developed to streamline project management and enhance team collaboration.",
+  overview:
+    "A comprehensive tool developed to streamline project management and enhance team collaboration.",
   objectives:
     "1. To simplify task tracking and project organization.\n2. To improve team communication and document sharing.\n3. To provide real-time project insights and analytics.",
   approach:
@@ -23,7 +24,7 @@ const caseStudy: CaseStudyProps = {
     "1. Integrating real-time data synchronization across different users.\n2. Ensuring data security and privacy for sensitive project information.\n3. Handling high concurrency and performance optimization.",
   results:
     "1. Reduced project management overhead by 30%.\n2. Enhanced team productivity and communication.\n3. Achieved a 95% user satisfaction rate based on feedback.",
-}
+};
 
 export default function CaseStudy() {
   return (
@@ -50,7 +51,9 @@ export default function CaseStudy() {
 
           <section className="mb-8">
             <h2 className="mb-4 text-3xl font-semibold">Objectives</h2>
-            <p className="whitespace-pre-line text-lg">{caseStudy.objectives}</p>
+            <p className="whitespace-pre-line text-lg">
+              {caseStudy.objectives}
+            </p>
           </section>
 
           <section className="mb-8">
@@ -60,7 +63,9 @@ export default function CaseStudy() {
 
           <section className="mb-8">
             <h2 className="mb-4 text-3xl font-semibold">Challenges</h2>
-            <p className="whitespace-pre-line text-lg">{caseStudy.challenges}</p>
+            <p className="whitespace-pre-line text-lg">
+              {caseStudy.challenges}
+            </p>
           </section>
 
           <section className="mb-8">
@@ -74,5 +79,5 @@ export default function CaseStudy() {
         Back to Projects{" "}
       </Link>
     </div>
-  )
+  );
 }
