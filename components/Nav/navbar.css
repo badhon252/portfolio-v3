@@ -1,0 +1,11 @@
+/* .nav-link {
+    margin: 5px 20px;
+} */
+
+.nav-link {
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}

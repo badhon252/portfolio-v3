@@ -1,0 +1,114 @@
+.root {
+  --primary: lime;
+  --secondary: blue;
+  --background: rgb(237, 255, 237);
+  --foreground: rgb(0, 31, 0);
+  --accent: rgb(212, 0, 255);
+}
+
+/* body {
+  overflow: hidden;
+} */
+
+.nav-link {
+  font-weight: 500;
+}
+
+.title {
+  background-color: lime;
+  margin-bottom: -5rem;
+  display: inline-block;
+}
+
+.hero-img {
+  /* margin-top: -3rem; */
+}
+
+/* .call-to-action {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    159deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(62, 60, 60, 0.19931722689075626) 10%
+  );
+} */
+
+.primary {
+  background: lime;
+  color: #000000;
+  transition: all 0.4s;
+}
+
+.out-line {
+  transition: all 0.4s;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.664);
+}
+
+.primary:hover {
+  background: rgba(0, 255, 0, 0.753);
+  padding: 10px 2.5rem;
+}
+
+.out-line:hover {
+  background-color: #000000;
+  padding: 10px 2.5rem;
+}
+
+.time-span {
+  color: var(--accent);
+}
+
+.company {
+  cursor: pointer;
+}
+
+.company > .brlbd:hover {
+  background-color: var(--secondary);
+}
+
+/* 
+b {
+  font-weight: 500;
+} */
+
+#work > .work-title > h3 {
+  background: var(--primary);
+  display: inline-block;
+  letter-spacing: 5px;
+}
+
+.product {
+  border: 1px solid rgba(0, 0, 0, 0.059);
+}
+
+.product-link {
+  color: var(--background);
+  border: 1px solid rgba(0, 0, 0, 0.525);
+  border-radius: 5px;
+  padding: 5px 1rem;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.product-link:hover {
+  background-color: rgb(0, 0, 0);
+  color: aliceblue;
+  padding: 5px 1.5rem;
+}
+
+.description {
+  background-color: var(--secondary);
+  color: var(--background);
+}
+
+.bg-work {
+  background-color: var(--foreground);
+}
+
+/* About section */
+
+.about__me-info {
+  font-weight: 600;
+  margin: 1rem 0;
+}

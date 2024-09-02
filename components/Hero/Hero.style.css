@@ -1,0 +1,9 @@
+/* #heroSection,
+.heroImg {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+.hero-img {
+    width: fit-content;
+}
