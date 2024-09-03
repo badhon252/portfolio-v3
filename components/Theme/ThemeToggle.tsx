@@ -1,3 +1,4 @@
+"use client";
 // components/ThemeToggle.tsx
 import { useEffect, useState } from "react";
 
@@ -23,7 +24,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={() => setIsDarkMode((prevMode) => !prevMode)}
-      className="p-2 rounded bg-gray-200 dark:bg-gray-800"
+      className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 size-10"
     >
       {isDarkMode ? "🌙" : "☀️"}
     </button>

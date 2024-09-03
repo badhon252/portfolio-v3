@@ -1,32 +1,33 @@
+import Link from "next/link";
 import "styles/style.css";
 export default function Experience() {
   return (
-    <main className="container mx-auto">
+    <main className="mx-auto bg-slate-200 dark:bg-slate-950 py-12 ">
       <section
         id="experience"
-        className="sm:w-12/12 mx-auto flex h-screen flex-col justify-center md:w-4/6 xl:w-3/6"
+        className="sm:w-12/12 mx-auto flex flex-col justify-center md:w-4/6 xl:w-3/6 container text-slate-700 dark:text-gray-200"
       >
-        <h1 className="h1 text-bold my-8 text-center text-4xl font-black  md:text-6xl lg:text-8xl ">
+        <h1 className="h1 text-bold mb-12 text-center text-4xl font-black  md:text-6xl lg:text-8xl ">
           Experiences
         </h1>
 
-        <div className="experience my-12 flex flex-wrap">
-          <div className="basis-1/3 text-lg font-semibold ">
-            <ul className="company">
-              <li className="brlbd me-12 rounded-lg border px-2">
-                Babylon Resource ltd
+        <div className="experience flex flex-wrap ">
+          <div className="md:basis-1/3 text-lg font-semibold ">
+            {/* Job listing  */}
+            <ul className="company mx-8">
+              <li className="brlbd  rounded-lg border px-2 my-4">
+                <Link href="#">Babylon Resource ltd</Link>
               </li>{" "}
-              <li className="brlbd my-2 me-12 rounded-lg border px-2">
-                Freelance
-              </li>
+              <li className="brlbd  rounded-lg border px-2 my-4">Freelance</li>
             </ul>
           </div>
-          <div className="basis-2/3 border-l-2 border-slate-100 px-8">
+          <div className="md:basis-2/3 border-l-2 border-slate-100 px-8">
             <h2 className="text-xl font-extrabold">
               Python Progamming Instructor{" "}
             </h2>
-            <p className="time-span text-sm ">November 2023 - present</p>
-            <ul className="my-4">
+            <p className=" text-sm text-indigo-500 ">November 2023 - present</p>
+
+            <ul className="my-4 text-slate-700 dark:text-slate-300">
               {/* <li className="experience-details my-4">
               <article>
                 “Sheikh Russel Digital Lab” is a flagship project of the

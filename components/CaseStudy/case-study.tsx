@@ -28,56 +28,60 @@ const caseStudy: CaseStudyProps = {
 
 export default function CaseStudy() {
   return (
-    <div className="case-study container mx-auto px-4 py-8">
-      <h1 className="mb-6 text-4xl font-bold">{caseStudy.title}</h1>
+    <section className="bg-slate-100 dark:bg-slate-900 text-slate-950 dark:text-slate-200">
+      <div className="case-study container mx-auto px-4 py-8">
+        <h1 className="mb-6 text-4xl font-bold">{caseStudy.title}</h1>
 
-      <div className="mb-8 flex flex-col gap-8 md:flex-row">
-        <div className="flex-1">
-          <Image
-            src={caseStudy.img}
-            alt={`Image for ${caseStudy.title}`}
-            className="rounded-lg shadow-md"
-            layout="responsive"
-            width={800}
-            height={450}
-          />
+        <div className="mb-8 flex flex-col gap-8 md:flex-row">
+          <div className="flex-1">
+            <Image
+              src={caseStudy.img}
+              alt={`Image for ${caseStudy.title}`}
+              className="rounded-lg shadow-md"
+              layout="responsive"
+              width={800}
+              height={450}
+            />
+          </div>
+
+          <div className="flex-1">
+            <section className="mb-8">
+              <h2 className="mb-4 text-3xl font-semibold">Project Overview</h2>
+              <p className="text-lg">{caseStudy.overview}</p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="mb-4 text-3xl font-semibold">Objectives</h2>
+              <p className="whitespace-pre-line text-lg">
+                {caseStudy.objectives}
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="mb-4 text-3xl font-semibold">Approach</h2>
+              <p className="whitespace-pre-line text-lg">
+                {caseStudy.approach}
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="mb-4 text-3xl font-semibold">Challenges</h2>
+              <p className="whitespace-pre-line text-lg">
+                {caseStudy.challenges}
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="mb-4 text-3xl font-semibold">Results</h2>
+              <p className="whitespace-pre-line text-lg">{caseStudy.results}</p>
+            </section>
+          </div>
         </div>
 
-        <div className="flex-1">
-          <section className="mb-8">
-            <h2 className="mb-4 text-3xl font-semibold">Project Overview</h2>
-            <p className="text-lg">{caseStudy.overview}</p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="mb-4 text-3xl font-semibold">Objectives</h2>
-            <p className="whitespace-pre-line text-lg">
-              {caseStudy.objectives}
-            </p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="mb-4 text-3xl font-semibold">Approach</h2>
-            <p className="whitespace-pre-line text-lg">{caseStudy.approach}</p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="mb-4 text-3xl font-semibold">Challenges</h2>
-            <p className="whitespace-pre-line text-lg">
-              {caseStudy.challenges}
-            </p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="mb-4 text-3xl font-semibold">Results</h2>
-            <p className="whitespace-pre-line text-lg">{caseStudy.results}</p>
-          </section>
-        </div>
+        <Link href="/" className="text-lg text-blue-500 hover:underline">
+          Back to Projects{" "}
+        </Link>
       </div>
-
-      <Link href="/" className="text-lg text-blue-500 hover:underline">
-        Back to Projects{" "}
-      </Link>
-    </div>
+    </section>
   );
 }

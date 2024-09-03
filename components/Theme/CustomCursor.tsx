@@ -1,56 +1,75 @@
 "use client";
-// components/CustomCursor.tsx
-import React, { useEffect } from "react";
+
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import styles from "styles/CustomCursor.module.css";
+import Link from "next/link"; // Import Link from next/link if needed
 
 const CustomCursor = () => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+
   useEffect(() => {
-    const cursorElements = Array.from(
-      document.querySelectorAll("[data-cursor]"),
-    );
-    const links = Array.from(document.querySelectorAll("a"));
-
     const moveCursor = (e: MouseEvent) => {
-      const x = e.clientX;
-      const y = e.clientY;
-
-      cursorElements.forEach((cursor) => {
-        if (cursor instanceof HTMLElement) {
-          cursor.style.left = `${x - cursor.clientWidth / 2}px`;
-          cursor.style.top = `${y - cursor.clientHeight / 2}px`;
-        }
-      });
+      setPosition({ x: e.clientX, y: e.clientY });
     };
 
-    const handleMouseEnter = () => {
-      document.body.classList.add(styles.cursorHover);
+    const handleMouseEnter = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (
+        target.tagName === "A" ||
+        target.closest("a") ||
+        target.tagName === "LINK" ||
+        target.closest("Link")
+      ) {
+        setIsHovering(true);
+      }
     };
 
-    const handleMouseLeave = () => {
-      document.body.classList.remove(styles.cursorHover);
+    const handleMouseLeave = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (
+        target.tagName === "A" ||
+        target.closest("a") ||
+        target.tagName === "LINK" ||
+        target.closest("Link")
+      ) {
+        setIsHovering(false);
+      }
     };
-
-    // Add event listeners to links
-    links.forEach((link) => {
-      link.addEventListener("mouseenter", handleMouseEnter);
-      link.addEventListener("mouseleave", handleMouseLeave);
-    });
 
     document.addEventListener("mousemove", moveCursor);
+    document.addEventListener("mouseover", handleMouseEnter);
+    document.addEventListener("mouseout", handleMouseLeave);
 
     return () => {
       document.removeEventListener("mousemove", moveCursor);
-      links.forEach((link) => {
-        link.removeEventListener("mouseenter", handleMouseEnter);
-        link.removeEventListener("mouseleave", handleMouseLeave);
-      });
+      document.removeEventListener("mouseover", handleMouseEnter);
+      document.removeEventListener("mouseout", handleMouseLeave);
     };
   }, []);
 
   return (
     <>
-      <div data-cursor="0" className={styles.cursor}></div>
-      <div data-cursor="1" className={styles.cursor}></div>
+      <motion.div
+        className={styles.cursor}
+        data-cursor="0"
+        animate={{
+          x: position.x - 2.5,
+          y: position.y - 2.5,
+        }}
+        transition={{ type: "spring", stiffness: 500, damping: 30 }}
+      />
+      <motion.div
+        className={`${styles.cursor} ${isHovering ? styles.cursorHover : ""}`}
+        data-cursor="1"
+        animate={{
+          x: position.x - 15,
+          y: position.y - 15,
+          scale: isHovering ? 4 : 1,
+        }}
+        transition={{ type: "spring", stiffness: 500, damping: 30 }}
+      />
     </>
   );
 };
