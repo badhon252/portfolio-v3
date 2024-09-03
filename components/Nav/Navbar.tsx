@@ -41,11 +41,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Theme toggle button */}
-      <div className="">
-        <ThemeToggle />
-      </div>
-
       {/* Navigation links */}
       <nav
         className={`${
@@ -75,6 +70,10 @@ export default function Navbar() {
           </li>
         </ul>
       </nav>
+      {/* Theme toggle button */}
+      <div className="">
+        <ThemeToggle />
+      </div>
     </header>
   );
 }

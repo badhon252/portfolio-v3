@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 // HeroSection.tsx
 "use client";
 import "./Hero.style.css";
@@ -9,7 +10,7 @@ export default function HeroSection() {
   return (
     <header
       id="heroSection"
-      className="flex flex-col justify-between md:min-h-screen dark:bg-gray-900"
+      className="flex flex-col justify-between md:min-h-screen bg-slate-100 dark:bg-slate-950"
     >
       <section className="container mx-auto">
         <Navbar />
@@ -25,22 +26,22 @@ export default function HeroSection() {
             <h1 className="name my-6 text-3xl font-extrabold text-slate-700 dark:text-gray-100 sm:text-4xl md:text-5xl">
               I'm Khalid Hossain.
             </h1>
-            <h2 className="text-indigo-500 my-2 px-4 text-3xl font-extrabold  sm:text-4xl md:text-6xl xl:text-8xl">
+            <h2 className="title my-2 px-4 text-3xl font-extrabold  sm:text-4xl md:text-6xl xl:text-8xl">
               Frontend Engineer
             </h2>
           </div>
 
           {/* Hero image and slogans side by side */}
           <div className="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-x-8 md:space-y-0 lg:space-x-12">
-            <p className="slogan text-lg font-medium text-slate-600 dark:text-gray-400 md:w-1/3 md:text-2xl lg:text-nowrap">
+            <p className="slogan text-lg font-medium text-slate-600 dark:text-gray-400 md:w-1/3 md:text-2xl ">
               "Turning Ideas into Interactive Reality.💡"
             </p>
-            <div className="lg:w-128 xl:w-128 sm:w-56 w-96">
+            <div className="lg:w-128 xl:w-128 sm:min-w-max w-96">
               <Image
                 src={hero}
                 alt="Khalid Hossain - Image"
                 layout="responsive"
-                className="hero-img rounded-full border-4 border-indigo-500 dark:border-indigo-300 shadow-lg"
+                className="hero-img rounded-full border-4 border-indigo-500 shadow-lg"
               />
             </div>
             <p className="slogan text-center text-lg font-medium text-slate-600 dark:text-gray-400 md:w-1/3 md:text-left md:text-2xl">

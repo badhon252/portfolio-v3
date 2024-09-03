@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { pick, omit } = require("lodash");
-const colors = require("tailwindcss/colors");
+// const { pick, omit } = require("lodash");
+// const colors = require("tailwindcss/colors");
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
@@ -14,7 +14,6 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: "class", // or 'media' for OS-based dark mode
   theme: {
     extend: {
       colors: {
@@ -33,6 +32,13 @@ module.exports = {
         bg: "var(--background-color)",
         text: "var(--text-color)",
         accent: "var(--accent-color)",
+      },
+      backgroundImage: {
+        "cool-night": "var(--gradient-cool-night)",
+        "sunset-glow": "var(--gradient-sunset-glow)",
+        "ocean-breeze": "var(--gradient-ocean-breeze)",
+        "purple-haze": "var(--gradient-purple-haze)",
+        "midnight-calm": "var(--gradient-midnight-calm)",
       },
       fontFamily: {
         body: [
