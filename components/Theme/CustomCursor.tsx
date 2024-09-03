@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import styles from "styles/CustomCursor.module.css";
-import Link from "next/link"; // Import Link from next/link if needed
 
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
