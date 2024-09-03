@@ -6,7 +6,6 @@
   z-index: 10000;
   border-radius: 50%;
   mix-blend-mode: difference;
-  transition: all 0.1s ease; /* Ensure smooth transition */
 }
 
 .cursor[data-cursor="0"] {
@@ -19,23 +18,11 @@
   border: 2px solid #fff;
   height: 30px;
   width: 30px;
+  transition: all 0.15s ease;
 }
 
-.cursorHover .cursor[data-cursor="1"] {
+.cursorHover {
   height: 120px;
   width: 120px;
   background-color: #fff;
-}
-
-.cursorHover .cursor[data-cursor="0"] {
-  background-color: #fff;
-  height: 10px;
-  width: 10px;
-}
-
-/* Add transition effects for the hover state */
-.cursorHover .cursor[data-cursor="1"] {
-  transition:
-    height 0.2s ease,
-    width 0.2s ease;
 }

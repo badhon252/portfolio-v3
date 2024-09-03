@@ -3,20 +3,19 @@
 "use client";
 import "./Hero.style.css";
 import Image from "next/image";
+import Link from "next/link";
 import hero from "Assets/image/badhon252.png";
-import Navbar from "../Nav/Navbar";
 
 export default function HeroSection() {
   return (
     <header
       id="heroSection"
-      className="flex flex-col justify-between md:min-h-screen bg-slate-100 dark:bg-slate-950"
+      className="flex flex-col justify-between md:min-h-screen bg-slate-100 dark:bg-slate-900"
     >
       <section className="container mx-auto">
-        <Navbar />
         <div
           id="hero"
-          className="container mx-auto flex flex-col items-center justify-center px-4 py-12 text-center md:pb-24 dark:text-gray-300"
+          className="container mx-auto flex flex-col items-center justify-center px-4 py-12 text-center  dark:text-gray-300"
         >
           {/* Introduction */}
           <div className="mb-4">
@@ -52,15 +51,14 @@ export default function HeroSection() {
 
           {/* Call-to-action buttons */}
           <div className="call-to-action mt-8 flex w-full flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 md:mt-12">
-            <button className="out-line px-6 py-3 text-lg dark:border-gray-600 dark:text-gray-300">
-              Hire me
+            <button className="transition-all px-6 py-3 text-lg border border-indigo-500 hover:bg-indigo-500 text-gray-800 dark:bg-indigo-500 dark:text-gray-100 rounded-md">
+              <Link href="#">Hire me</Link>
             </button>
-            <button className="primary px-6 py-3 text-lg dark:bg-indigo-500 dark:text-gray-100">
-              View Projects.
+            <button className=" px-6 py-3 text-lg bg-indigo-500 text-gray-100 dark:bg-indigo-500 dark:text-gray-100 rounded-md">
+              <Link href="#">View Projects.</Link>
             </button>
           </div>
         </div>
-        <svg className="... size-6 animate-bounce"></svg>
       </section>
     </header>
   );

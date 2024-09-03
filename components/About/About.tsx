@@ -1,8 +1,13 @@
+import Link from "next/link";
+
 export default function About() {
   return (
-    <section className="min-h-screen p-4" id="about">
+    <section
+      className="min-h-screen p-4 bg-slate-200 dark:bg-slate-950 text-slate-950 dark:text-slate-200"
+      id="about"
+    >
       <div className="sm:w-12/12 mx-auto md:w-4/6 xl:w-3/6">
-        <h1 className="h1 text-bold my-8 text-center text-4xl font-black text-indigo-700 md:text-6xl lg:text-8xl">
+        <h1 className="h1 text-bold my-8 text-center text-4xl font-black md:text-6xl lg:text-8xl">
           About Me
         </h1>
         Hi, I&apos;m Khalid Hossain, a dedicated Frontend Engineer and Python
@@ -32,16 +37,19 @@ export default function About() {
         non-technical users. I believe in the potential of technology to create
         meaningful impacts, and I&apos;m excited about the ossibilities that lie
         ahead as I explore this new venture as a solopreneur and indie hacker.
-        <div className="certifications my-6">
-          <h2 className="text-2xl font-semibold">Certification</h2>
-          <a
-            href="https://ledp.ictd.gov.bd/certificate/?regid=282683"
-            target="_blank"
-            rel="noreferrer"
-            className="text-blue-600 "
-          >
-            Web Design and Development - WDD
-          </a>
+        <div className="certifications my-12">
+          <h2 className="text-2xl font-bold">Certification</h2>
+          <ul>
+            <li>
+              <Link
+                href="https://ledp.ictd.gov.bd/certificate/?regid=282683"
+                rel="noreferrer"
+                className="text-blue-500 "
+              >
+                Web Design and Development - WDD
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
