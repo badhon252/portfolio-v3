@@ -1,11 +1,11 @@
-/* .nav-link {
-    margin: 5px 20px;
-} */
+@import url("https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&display=swap");
 
-.nav-link {
-  cursor: pointer;
+.resume {
+  line-height: 2.75rem;
 }
 
-.nav-link:hover {
-  color: var(--accent);
+.libre-barcode-128-text-regular {
+  font-family: "Libre Barcode 128 Text", system-ui;
+  font-weight: 800;
+  font-style: normal;
 }

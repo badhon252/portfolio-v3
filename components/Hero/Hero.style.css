@@ -5,5 +5,56 @@
 } */
 
 .hero-img {
-    width: fit-content;
+  width: fit-content;
+}
+
+/* Hero.style.css */
+
+/* Light mode styles */
+body {
+  --text-color: #4a4a4a;
+  --bg-color: #ffffff;
+  --border-color: #e5e7eb;
+}
+
+.text-gray-700 {
+  color: var(--text-color);
+}
+
+.bg-white {
+  background-color: var(--bg-color);
+}
+
+.border-indigo-500 {
+  border-color: #6366f1;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  body {
+    --text-color: #d1d5db;
+    --bg-color: #111827;
+    --border-color: #4b5563;
+  }
+
+  .text-gray-700 {
+    color: var(--text-color);
+  }
+
+  .bg-white {
+    background-color: var(--bg-color);
+  }
+
+  .border-indigo-500 {
+    border-color: #9333ea;
+  }
+
+  /* You can add additional dark mode specific styles here */
+  .text-gray-600 {
+    color: #d1d5db;
+  }
+
+  .text-gray-900 {
+    color: #f9fafb;
+  }
 }

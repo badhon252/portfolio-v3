@@ -1,11 +1,10 @@
 <img align="right" width="360px" height="410px" src="./.github/assets/project-logo-vertical.png">
 
-# Next.js Enterprise Boilerplate </br>  [![GitHub Actions Workflow Status][check-workflow-badge]][check-workflow-badge-link] [![GitHub License][github-license-badge]][github-license-badge-link] [![GitHub contributors][github-contributors-badge]][github-contributors-badge-link] [![Discord][discord-badge]][discord-badge-link] [![Blazity][made-by-blazity-badge]][made-by-blazity-badge-link]
+# Next.js Enterprise Boilerplate </br> [![GitHub Actions Workflow Status][check-workflow-badge]][check-workflow-badge-link] [![GitHub License][github-license-badge]][github-license-badge-link] [![GitHub contributors][github-contributors-badge]][github-contributors-badge-link] [![Discord][discord-badge]][discord-badge-link] [![Blazity][made-by-blazity-badge]][made-by-blazity-badge-link]
 
 Welcome to the _Next.js Enterprise Boilerplate_, an open-source template for enterprise projects! It's loaded with features that'll help you build a high-performance, maintainable, and enjoyable app. We've done all the heavy lifting for you, so sit back, relax, and get ready to conquer the world with your incredible app! 🌍
 
-> [!NOTE]
-> **Blazity** is a group of Next.js/Headless experts. Contact us at [contact@blazity.com](https://blazity.com) if you’d like to talk about your project or just to have a chat with us
+> [!NOTE] > **Blazity** is a group of Next.js/Headless experts. Contact us at [contact@blazity.com](https://blazity.com) if you’d like to talk about your project or just to have a chat with us
 
 ## Features
 
@@ -156,29 +155,29 @@ To write acceptance tests, we leverage Storybook's [`play` function](https://sto
  */
 export const FilledForm: Story = {
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
+    const canvas = within(canvasElement);
 
     const emailInput = canvas.getByLabelText("email", {
       selector: "input",
-    })
+    });
 
     await userEvent.type(emailInput, "example-email@email.com", {
       delay: 100,
-    })
+    });
 
     const passwordInput = canvas.getByLabelText("password", {
       selector: "input",
-    })
+    });
 
     await userEvent.type(passwordInput, "ExamplePassword", {
       delay: 100,
-    })
+    });
     // See https://storybook.js.org/docs/react/essentials/actions#automatically-matching-args to learn how to setup logging in the Actions panel
-    const submitButton = canvas.getByRole("button")
+    const submitButton = canvas.getByRole("button");
 
-    await userEvent.click(submitButton)
+    await userEvent.click(submitButton);
   },
-}
+};
 ```
 
 ### Smoke Testing
@@ -244,7 +243,7 @@ export const env = createEnv({
     SECRET_KEY: process.env.SECRET_KEY,
     API_URL: process.env.NEXT_PUBLIC_API_URL,
   },
-})
+});
 ```
 
 If the required environment variables are not set, you'll get an error message:
@@ -272,7 +271,6 @@ If you're looking for help or simply want to share your thoughts about the proje
   <img src="https://discordapp.com/api/guilds/1111676875782234175/widget.png?style=banner2" alt="Blazity Discord Banner"/>
 </a>
 <br />
-
 
 ## 📜 License
 
@@ -314,7 +312,6 @@ This project is licensed under the MIT License. For more information, see the [L
 [github-contributors-badge]: https://img.shields.io/github/contributors/blazity/next-enterprise?link=https%3A%2F%2Fgithub.com%2FBlazity%2Fnext-enterprise%2Fgraphs%2Fcontributors
 [discord-badge]: https://img.shields.io/discord/1111676875782234175?color=7b8dcd&link=https%3A%2F%2Fblazity.com%2Fdiscord
 [made-by-blazity-badge]: https://img.shields.io/badge/made_by-Blazity-blue?color=FF782B&link=https://blazity.com/
-
 [check-workflow-badge-link]: https://github.com/Blazity/next-enterprise/actions/workflows/check.yml
 [github-license-badge-link]: https://github.com/Blazity/next-enterprise/blob/main/LICENSE
 [github-contributors-badge-link]: https://github.com/Blazity/next-enterprise/graphs/contributors

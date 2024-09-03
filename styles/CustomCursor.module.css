@@ -1,0 +1,28 @@
+/* styles/CustomCursor.module.css */
+.cursor {
+  position: fixed;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  z-index: 10000;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+}
+
+.cursor[data-cursor="0"] {
+  background-color: #fff;
+  height: 5px;
+  width: 5px;
+}
+
+.cursor[data-cursor="1"] {
+  border: 2px solid #fff;
+  height: 30px;
+  width: 30px;
+  transition: all 0.15s ease;
+}
+
+.cursorHover {
+  height: 120px;
+  width: 120px;
+  background-color: #fff;
+}

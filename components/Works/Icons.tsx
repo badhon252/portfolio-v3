@@ -1,13 +1,13 @@
-import Image from "next/image"
+import Image from "next/image";
 
 type IconType = {
-  src: string
-  height: number
-  width: number
-}
+  src: string;
+  height: number;
+  width: number;
+};
 
 interface IconsProps {
-  icons: IconType[]
+  icons: IconType[];
 }
 
 export default function Icons({ icons }: IconsProps) {
@@ -19,5 +19,5 @@ export default function Icons({ icons }: IconsProps) {
         </li>
       ))}
     </ul>
-  )
+  );
 }
