@@ -1,12 +1,31 @@
 /* styles/globals.css */
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap");
+
+body {
+  cursor: none;
+}
 :root {
-  --background-color: #ffffff; /* Light mode background */
-  --text-color: #000000; /* Light mode text color */
-  --accent-color: #39ff14; /* Light mode accent color */
+  --primary-color: #3a3a56;
+  --secondary-color: #a7b8e6;
+  --accent-color: #ff6b6b;
+  --text-light: #eaeaea;
+  --text-dark: #202024;
+
+  /* Gradients */
+  --gradient-cool-night: linear-gradient(135deg, #1c1d21 0%, #3a3a56 100%);
+  --gradient-sunset-glow: linear-gradient(135deg, #ff6b6b 0%, #ffd700 100%);
+  --gradient-ocean-breeze: linear-gradient(135deg, #56ccf2 0%, #2f80ed 100%);
+  --gradient-purple-haze: linear-gradient(135deg, #9c27b0 0%, #ff4081 100%);
+  --gradient-midnight-calm: linear-gradient(135deg, #141e30 0%, #243b55 100%);
 }
 
-[data-theme='dark'] {
-  --background-color: #121212; /* Dark mode background */
-  --text-color: #e0e0e0; /* Dark mode text color */
-  --accent-color: #39ff14; /* Dark mode accent color */
+[data-cursor] {
+  border-radius: 50%;
+}
+
+/* styles/globals.css */
+.cursor-hover--a .cursor[data-cursor="1"] {
+  height: 120px;
+  width: 120px;
+  background-color: #fff;
 }
