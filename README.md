@@ -155,29 +155,29 @@ To write acceptance tests, we leverage Storybook's [`play` function](https://sto
  */
 export const FilledForm: Story = {
   play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
+    const canvas = within(canvasElement);
 
     const emailInput = canvas.getByLabelText("email", {
       selector: "input",
-    })
+    });
 
     await userEvent.type(emailInput, "example-email@email.com", {
       delay: 100,
-    })
+    });
 
     const passwordInput = canvas.getByLabelText("password", {
       selector: "input",
-    })
+    });
 
     await userEvent.type(passwordInput, "ExamplePassword", {
       delay: 100,
-    })
+    });
     // See https://storybook.js.org/docs/react/essentials/actions#automatically-matching-args to learn how to setup logging in the Actions panel
-    const submitButton = canvas.getByRole("button")
+    const submitButton = canvas.getByRole("button");
 
-    await userEvent.click(submitButton)
+    await userEvent.click(submitButton);
   },
-}
+};
 ```
 
 ### Smoke Testing
@@ -243,7 +243,7 @@ export const env = createEnv({
     SECRET_KEY: process.env.SECRET_KEY,
     API_URL: process.env.NEXT_PUBLIC_API_URL,
   },
-})
+});
 ```
 
 If the required environment variables are not set, you'll get an error message:
