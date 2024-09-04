@@ -1,5 +1,6 @@
 // Navbar.tsx
 "use client";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import ThemeToggle from "../Theme/ThemeToggle";
@@ -8,74 +9,147 @@ import "./navbar.css";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Animation variants for the mobile menu overlay
+  const variants = {
+    open: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+      },
+    },
+    closed: {
+      opacity: 0,
+      x: "100%",
+      transition: {
+        duration: 0.3,
+        ease: "easeIn",
+      },
+    },
+  };
+
   return (
-    <header className="flex items-center justify-between px-4 py-2 md:px-8 bg-slate-200 dark:bg-gray-800 rounded-md sticky top-0 z-50">
-      {/* Logo  */}
-      <div className="logo text-2xl ">
-        <Link href="#">
-          <h3 className="libre-barcode-128-text-regular text-indigo-600 font-black text-6xl ">
-            KHB
-          </h3>
-        </Link>
-      </div>
-      <div className="flex justify-end items-center md:flex-row flex-row-reverse gap-4">
-        {/* Hamburger menu for mobile */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-gray-800 dark:text-gray-200 focus:outline-none"
-          >
-            <svg
-              className="size-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-              />
-            </svg>
-          </button>
+    <header className="md:px-8 bg-slate-200 dark:bg-gray-800 sticky top-0 z-50 shadow-md shadow-gray-300 dark:shadow-gray-800">
+      {/* Logo */}
+      <section className="container mx-auto flex items-center justify-between px-4 py-2 md:px-8">
+        <div className="logo text-2xl basis-5/12">
+          <Link href="#">
+            <h3 className="libre-barcode-128-text-regular text-indigo-600 font-black text-6xl">
+              KHB
+            </h3>
+          </Link>
         </div>
 
-        {/* Navigation links */}
-        <nav
-          className={`${
-            isOpen ? "block" : "hidden"
-          } w-full md:flex md:w-auto md:items-center`}
-        >
-          <ul className="nav flex flex-col items-center justify-evenly md:flex-row md:space-x-6">
-            <li className="nav-link gap-4 text-xl md:my-0  text-gray-800 dark:text-gray-100">
-              <Link href="#experience">Experience</Link>
-            </li>
-            <li className="nav-link gap-4 text-xl md:my-0 text-gray-800 dark:text-gray-100">
-              <Link href="/works">Work</Link>
-            </li>
-            <li className="nav-link gap-4 text-xl md:my-0 text-gray-800 dark:text-gray-100">
-              <Link href="#about">About</Link>
-            </li>
-            <li className="nav-link gap-4 text-xl md:my-0 text-gray-800 dark:text-gray-100">
-              <Link href="#contact">Contact</Link>
-            </li>
-          </ul>
-        </nav>
-        {/* Theme toggle button */}
-        <div className="flex justify-center items-center gap-2">
-          <div className="nav-link my-2 text-xl md:my-0 text-gray-800 dark:text-gray-100 border-indigo-500 border rounded-md">
-            <Link
-              href="https://docs.google.com/document/d/1vb8WyJPbrLfE5a5NOw4y0TK2mAZ7gEllx0K4ptzV6O4/edit?usp=sharing"
-              className="px-4 py-6 resume"
+        <div className="flex md:justify-between items-center  justify-end basis-7/12">
+          {/* Hamburger menu for mobile */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-gray-800 dark:text-gray-200 focus:outline-none"
             >
-              Resume
-            </Link>
+              <svg
+                className="size-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d={
+                    isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"
+                  }
+                />
+              </svg>
+            </button>
           </div>
-          <ThemeToggle />
+
+          {/* Navigation links for larger screens */}
+          <nav className="hidden md:flex md:items-center md:space-x-6">
+            <ul className="nav flex flex-row items-center">
+              <li className="nav-link text-xl text-gray-800 dark:text-gray-100">
+                <Link href="/works">Work</Link>
+              </li>
+              <li className="nav-link text-xl text-gray-800 dark:text-gray-100">
+                <Link href="#about">About</Link>
+              </li>
+              <li className="nav-link text-xl text-gray-800 dark:text-gray-100">
+                <Link href="#contact">Contact</Link>
+              </li>
+              <li className="nav-link text-xl text-gray-800 dark:text-gray-100 border-indigo-500 border rounded-md p-2">
+                <Link href="https://docs.google.com/document/d/1vb8WyJPbrLfE5a5NOw4y0TK2mAZ7gEllx0K4ptzV6O4/edit?usp=sharing">
+                  Resume
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
+          {/* Navigation overlay for mobile screens */}
+          <motion.nav
+            className={`${
+              isOpen ? "flex" : "hidden"
+            } fixed inset-0 bg-gray-800 bg-opacity-95 z-50 flex flex-col items-center justify-center`}
+            initial={false}
+            animate={isOpen ? "open" : "closed"}
+            variants={variants}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-4 right-4 text-white focus:outline-none"
+            >
+              <svg
+                className="size-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+
+            <ul className="nav flex flex-col items-center justify-center ">
+              <li className="nav-link text-2xl text-white">
+                <Link href="/works" onClick={() => setIsOpen(false)}>
+                  Work
+                </Link>
+              </li>
+              <li className="nav-link text-2xl text-white">
+                <Link href="#about" onClick={() => setIsOpen(false)}>
+                  About
+                </Link>
+              </li>
+              <li className="nav-link text-2xl text-white">
+                <Link href="#contact" onClick={() => setIsOpen(false)}>
+                  Contact
+                </Link>
+              </li>
+              <li className="nav-link text-2xl text-white border border-white rounded-md p-2">
+                <Link
+                  href="https://docs.google.com/document/d/1vb8WyJPbrLfE5a5NOw4y0TK2mAZ7gEllx0K4ptzV6O4/edit?usp=sharing"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Resume
+                </Link>
+              </li>
+            </ul>
+          </motion.nav>
+
+          {/* Theme toggle - remains visible */}
+          <div className="md:flex justify-center items-center pb-2">
+            <ThemeToggle />
+          </div>
         </div>
-      </div>
+      </section>
     </header>
   );
 }
