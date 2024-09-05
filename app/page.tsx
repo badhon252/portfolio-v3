@@ -6,7 +6,7 @@ import Works from "components/Works/Works";
 
 export default function Home() {
   return (
-    <main className=" relative overflow-hidden" id="MainTag">
+    <main className="  overflow-hidden" id="MainTag">
       <HeroSection />
 
       <Experience />
