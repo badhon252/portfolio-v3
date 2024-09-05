@@ -54,11 +54,11 @@ export default function HeroSection() {
             </div>
 
             {/* Call-to-action buttons */}
-            <div className="call-to-action mt-8 flex w-full flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 md:mt-12 md:absolute bottom-12 z-10 gap-4">
+            <div className="call-to-action mt-8 flex w-full flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 md:mt-12 md:absolute bottom-8 z-10 gap-4">
               <button>
                 <Link
                   href="#"
-                  className=" px-6 py-3 text-lg bg-indigo-500 text-slate-100 rounded-md"
+                  className=" px-6 py-3 text-lg bg-indigo-700 text-slate-100 rounded-md"
                 >
                   View Projects.
                 </Link>
@@ -66,7 +66,7 @@ export default function HeroSection() {
               <button>
                 <Link
                   href="mailto:dev.khalidhossain@gmail.com"
-                  className="transition-all px-6 py-3 text-lg  bg-purple-600 text-gray-100 rounded-md"
+                  className="transition-all px-6 py-3 text-lg  bg-green-400 text-gray-800 rounded-md"
                 >
                   Email
                 </Link>
