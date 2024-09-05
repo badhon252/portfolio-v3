@@ -10,7 +10,7 @@ export default function Work() {
   const icons = [ireact, inext, itypescript, igit, iprisma];
   return (
     <section
-      className="bg-slate-100 dark:bg-slate-900 text-slate-950 dark:text-slate-200"
+      className="bg-gradient-to-b from-slate-100 to-cyan-50  dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700 "
       id="work"
     >
       <main className="container mx-auto">
@@ -18,10 +18,23 @@ export default function Work() {
           <h1 className=" text-4xl font-black md:text-6xl lg:text-8xl">
             Works
           </h1>
-          <h3 className="font-medium bg-accent inline-block px-4 ">
+          <h3 className=" title inline-block px-4 tracking-widest">
             Project | Collaboration | Exploration
           </h3>
         </div>
+        {/* Projects that I have worked on. */}
+        <Project
+          img={p01}
+          title="Prisma-Store"
+          desc="Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system. Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system."
+          icon={icons}
+        />{" "}
+        <Project
+          img={p01}
+          title="Prisma-Store"
+          desc="Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system. Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system."
+          icon={icons}
+        />{" "}
         <Project
           img={p01}
           title="Prisma-Store"
@@ -32,10 +45,10 @@ export default function Work() {
           <a
             target="_blank"
             href="https://github.com/badhon252"
-            className="product-link "
+            className="product-link dark:border-gray-400 bg-indigo-700 text-white text-xl"
             rel="noreferrer"
           >
-            Learn more.
+            More Projects
           </a>
         </div>{" "}
       </main>

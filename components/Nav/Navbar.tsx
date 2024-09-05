@@ -1,8 +1,10 @@
 // Navbar.tsx
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import logo from "Assets/favicon/android-chrome-192x192.png";
 import ThemeToggle from "../Theme/ThemeToggle";
 import "./navbar.css";
 
@@ -30,13 +32,13 @@ export default function Navbar() {
   };
 
   return (
-    <header className="md:px-8 bg-slate-200 dark:bg-gray-800 sticky top-0 z-50 shadow-md shadow-gray-300 dark:shadow-gray-800">
+    <header className="md:px-8 bg-slate-100 dark:bg-gray-800 sticky top-0 z-50 shadow-sm shadow-gray-300 dark:shadow-gray-600">
       {/* Logo */}
       <section className="container mx-auto flex items-center justify-between px-4 py-2 md:px-8">
-        <div className="logo text-2xl basis-5/12">
-          <h3 className="libre-barcode-128-text-regular text-indigo-600 font-black text-6xl">
-            <Link href="#">KHB</Link>
-          </h3>
+        <div className="logo basis-5/12">
+          <Link href="/">
+            <Image src={logo} alt="KHB" width={40} />
+          </Link>
         </div>
 
         <div className="flex md:justify-between items-center  justify-end basis-7/12">
@@ -77,8 +79,11 @@ export default function Navbar() {
               <li className="nav-link text-xl text-gray-800 dark:text-gray-100">
                 <Link href="#contact">Contact</Link>
               </li>
-              <li className="nav-link text-xl text-gray-800 dark:text-gray-100 border-indigo-500 border rounded-md p-2">
-                <Link href="https://docs.google.com/document/d/1vb8WyJPbrLfE5a5NOw4y0TK2mAZ7gEllx0K4ptzV6O4/edit?usp=sharing">
+              <li>
+                <Link
+                  href="https://docs.google.com/document/d/1vb8WyJPbrLfE5a5NOw4y0TK2mAZ7gEllx0K4ptzV6O4/edit?usp=sharing"
+                  className="text-xl text-slate-900 dark:text-gray-100  hover:bg-indigo-500 border border-indigo-500 rounded-md px-4 py-2"
+                >
                   Resume
                 </Link>
               </li>
@@ -131,11 +136,12 @@ export default function Navbar() {
                   Contact
                 </Link>
               </li>
-              <li className="nav-link text-2xl text-white border border-white rounded-md p-2">
+              <li>
                 <Link
                   href="https://drive.google.com/file/d/18Q6N1RkN8kGTEC-OgnEYQxNt77Nx5dF8/view?usp=sharing"
                   onClick={() => setIsOpen(false)}
                   target="_blank"
+                  className="text-2xl text-white bg-indigo-500 border border-white rounded-md p-2"
                 >
                   Resume
                 </Link>

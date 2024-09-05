@@ -1,14 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&display=swap"); */
 
 .resume {
   line-height: 2.75rem;
 }
-
+/* 
 .libre-barcode-128-text-regular {
   font-family: "Libre Barcode 128 Text", system-ui;
   font-weight: 800;
   font-style: normal;
-}
+} */
 
 .nav-link {
   font-weight: 500;

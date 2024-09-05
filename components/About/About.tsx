@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function About() {
   return (
     <section
-      className="min-h-screen p-4 bg-slate-200 dark:bg-slate-950 text-slate-950 dark:text-slate-200"
+      className="min-h-screen p-4 py-20 bg-gradient-to-t from-slate-100 to-cyan-50  dark:text-gray-100 dark:bg-gradient-to-t dark:from-slate-800 dark:to-gray-950 text-slate-700 "
       id="about"
     >
       <div className="sm:w-12/12 mx-auto md:w-4/6 xl:w-3/6">

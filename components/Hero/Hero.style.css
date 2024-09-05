@@ -1,8 +1,33 @@
-/* #heroSection,
-.heroImg {
-  display: flex;
-  flex-wrap: wrap;
-} */
+/* Light Mode Background */
+.background-blur {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: var(--background-gradient-light);
+  filter: blur(var(--blur-intensity-light));
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+/* Dark Mode Background */
+[data-theme="dark"] .background-blur {
+  background: var(--background-gradient-dark);
+  filter: blur(var(--blur-intensity-dark));
+}
+
+/* Overlay Effect for Content */
+.overlay {
+  position: relative;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  background-color: var(--overlay-background-light);
+  border-radius: var(--border-radius);
+}
+
+[data-theme="dark"] .overlay {
+  background-color: var(--overlay-background-dark);
+}
 
 .hero-img {
   width: fit-content;
