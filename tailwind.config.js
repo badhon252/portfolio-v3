@@ -5,6 +5,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  mode: "jit", // Optional: Just-in-Time mode for faster builds
   darkMode: "class",
   content: [
     "./index.html",
@@ -17,20 +18,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: "#eff6ff",
-          100: "#dbeafe",
-          200: "#bfdbfe",
-          300: "#93c5fd",
-          400: "#60a5fa",
-          500: "#3b82f6",
-          600: "#2563eb",
-          700: "#1d4ed8",
-          800: "#1e40af",
-          900: "#1e3a8a",
-        },
-        bg: "var(--background-color)",
-        text: "var(--text-color)",
+        // Use your CSS variables for colors in Tailwind
+        primary: "var(--primary-color)",
+        secondary: "var(--secondary-color)",
+        backgroundLight: "var(--gradient-ocean-breeze)",
+        backgroundDark: "var(--gradient-cool-night)",
+        textPrimary: "var(--text-primary-color)",
+        textLight: "var(--text-light-color)",
         accent: "var(--accent-color)",
       },
       backgroundImage: {
@@ -39,7 +33,13 @@ module.exports = {
         "ocean-breeze": "var(--gradient-ocean-breeze)",
         "purple-haze": "var(--gradient-purple-haze)",
         "midnight-calm": "var(--gradient-midnight-calm)",
-      },
+      }, // Extend the gradient color stop options if needed
+      gradientColorStops: () => ({
+        "primary-light": "rgba(79, 70, 229, 0.3)",
+        "secondary-light": "rgba(14, 165, 233, 0.3)",
+        "primary-dark": "rgba(28, 28, 30, 0.7)",
+        "secondary-dark": "rgba(31, 41, 55, 0.7)",
+      }),
       fontFamily: {
         body: [
           "Inter",

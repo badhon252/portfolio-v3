@@ -10,7 +10,7 @@ export default function HeroSection() {
   return (
     <header
       id="heroSection"
-      className="flex flex-col justify-between md:min-h-screen bg-slate-100 dark:bg-slate-900"
+      className="flex flex-col justify-between md:min-h-screen bg-gradient-to-b from-slate-100 to-cyan-50  dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700 "
     >
       <section className="container mx-auto">
         <div
@@ -19,10 +19,10 @@ export default function HeroSection() {
         >
           {/* Introduction */}
           <div className="mb-4">
-            <p className="text-xl font-semibold text-slate-700 dark:text-gray-200 sm:text-2xl md:text-3xl">
+            <p className="text-xl font-semibold sm:text-2xl md:text-3xl">
               Hello 👋
             </p>
-            <h1 className="name my-6 text-3xl font-extrabold text-slate-700 dark:text-gray-100 sm:text-4xl md:text-5xl">
+            <h1 className="name my-6 text-3xl font-extrabold  sm:text-4xl md:text-5xl">
               I'm Khalid Hossain.
             </h1>
             <h2 className="title my-2 px-4 text-3xl font-extrabold  sm:text-4xl md:text-6xl xl:text-8xl">

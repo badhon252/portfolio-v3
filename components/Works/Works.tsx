@@ -10,7 +10,7 @@ export default function Work() {
   const icons = [ireact, inext, itypescript, igit, iprisma];
   return (
     <section
-      className="bg-slate-100 dark:bg-slate-900 text-slate-950 dark:text-slate-200"
+      className="bg-gradient-to-b from-slate-100 to-cyan-50  dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700 "
       id="work"
     >
       <main className="container mx-auto">
