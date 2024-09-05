@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <footer
       id="contact"
-      className="bg-slate-100 dark:bg-slate-900 text-slate-950 dark:text-slate-200 "
+      className="bg-gradient-to-b from-slate-100 to-cyan-100  dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700 "
     >
       <main className="flex justify-between flex-col mx-auto min-h-screen p-4 sm:w-11/12 md:w-4/6 xl:w-3/6 text-base">
         <section>
@@ -37,16 +37,16 @@ export default function Contact() {
         </section>
         {/* Connect with me ================= */}
         <section>
-          <h1 className="h2 text-2xl font-semibold my-4  border-b">
-            Connect me Via.
-          </h1>
           <div className="flex justify-between items-center flex-wrap">
-            <ul className="flex flex-col gap-4 social-links">
+            <ul className="flex flex-col gap-4 social-links my-4">
+              <h1 className="h2 text-xl font-bold my-4 border-b">
+                Connect me Via.
+              </h1>
               <li>
                 <Link
                   href="https://www.facebook.com/badhon252"
                   target="_blank"
-                  className="text-indigo-500"
+                  className="underline"
                 >
                   @facebook/badhon252
                 </Link>
@@ -55,7 +55,7 @@ export default function Contact() {
                 <Link
                   href="https://www.linkedin.com/in/khalidhossainbadhon/"
                   target="_blank"
-                  className="text-indigo-500"
+                  className="underline"
                 >
                   @linkedin/khalidhossainbadhon
                 </Link>
@@ -64,7 +64,7 @@ export default function Contact() {
                 <Link
                   href="https://github.com/badhon252/"
                   target="_blank"
-                  className="text-indigo-500"
+                  className="underline"
                 >
                   @github/badhon252
                 </Link>
@@ -73,7 +73,7 @@ export default function Contact() {
                 <Link
                   href="https://t.me/khalidhossainbadhon"
                   target="_blank"
-                  className="text-indigo-500"
+                  className="underline"
                 >
                   @t.me/khalidhossain
                 </Link>
@@ -82,12 +82,27 @@ export default function Contact() {
                 <Link
                   href="https://twitter.com/badhon252"
                   target="_blank"
-                  className="text-indigo-500"
+                  className="underline"
                 >
                   @twitter.com/badhon252
                 </Link>
               </li>
             </ul>
+
+            <ul>
+              <h1 className="text-xl font-bold py-4 border-b">Freelance: </h1>
+              <li className="my-4 underline">
+                <Link href={"https://www.upwork.com/freelancers/badhon252"}>
+                  @Upwork/badhon252
+                </Link>
+              </li>
+              <li className="my-4 underline">
+                <Link href={"https://www.fiverr.com/fiverr/dev_khalid_007"}>
+                  @fiverr/dev_khalid_007
+                </Link>
+              </li>
+            </ul>
+
             <Signature />
           </div>
         </section>
@@ -96,7 +111,7 @@ export default function Contact() {
           All rights reserved by{" "}
           <Link
             href="https://github.com/badhon252"
-            className="text-indigo-500 underline"
+            className="text-blue-400 underline"
           >
             {" "}
             @badhon252
