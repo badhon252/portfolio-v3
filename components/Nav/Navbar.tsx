@@ -34,11 +34,9 @@ export default function Navbar() {
       {/* Logo */}
       <section className="container mx-auto flex items-center justify-between px-4 py-2 md:px-8">
         <div className="logo text-2xl basis-5/12">
-          <Link href="#">
-            <h3 className="libre-barcode-128-text-regular text-indigo-600 font-black text-6xl">
-              KHB
-            </h3>
-          </Link>
+          <h3 className="libre-barcode-128-text-regular text-indigo-600 font-black text-6xl">
+            <Link href="#">KHB</Link>
+          </h3>
         </div>
 
         <div className="flex md:justify-between items-center  justify-end basis-7/12">
@@ -135,8 +133,9 @@ export default function Navbar() {
               </li>
               <li className="nav-link text-2xl text-white border border-white rounded-md p-2">
                 <Link
-                  href="https://docs.google.com/document/d/1vb8WyJPbrLfE5a5NOw4y0TK2mAZ7gEllx0K4ptzV6O4/edit?usp=sharing"
+                  href="https://drive.google.com/file/d/18Q6N1RkN8kGTEC-OgnEYQxNt77Nx5dF8/view?usp=sharing"
                   onClick={() => setIsOpen(false)}
+                  target="_blank"
                 >
                   Resume
                 </Link>
