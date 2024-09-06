@@ -70,19 +70,19 @@ export default function Navbar() {
           {/* Navigation links for larger screens */}
           <nav className="hidden md:flex md:items-center md:space-x-6">
             <ul className="nav flex flex-row items-center">
-              <li className="nav-link text-xl text-gray-800 dark:text-gray-100">
+              <li className="nav-link text-lg text-gray-800 dark:text-gray-100">
                 <Link href="/works">Work</Link>
               </li>
-              <li className="nav-link text-xl text-gray-800 dark:text-gray-100">
+              <li className="nav-link text-lg text-gray-800 dark:text-gray-100">
                 <Link href="#about">About</Link>
               </li>
-              <li className="nav-link text-xl text-gray-800 dark:text-gray-100">
+              <li className="nav-link text-lg text-gray-800 dark:text-gray-100">
                 <Link href="#contact">Contact</Link>
               </li>
               <li>
                 <Link
                   href="https://docs.google.com/document/d/1vb8WyJPbrLfE5a5NOw4y0TK2mAZ7gEllx0K4ptzV6O4/edit?usp=sharing"
-                  className="text-xl text-slate-900 dark:text-gray-100  hover:bg-indigo-500 border border-indigo-500 rounded-md px-4 py-2"
+                  className="text-lg text-slate-900 dark:text-gray-100  hover:bg-indigo-500 border border-indigo-500 rounded-md px-4 hover:px-6 py-2 transition-all"
                 >
                   Resume
                 </Link>
