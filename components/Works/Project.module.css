@@ -1,0 +1,4 @@
+.product-desc {
+  backdrop-filter: blur(100px);
+  filter: blur(20px);
+}

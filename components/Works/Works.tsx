@@ -3,7 +3,10 @@ import inext from "Assets/image/Nextjs.svg";
 import iprisma from "Assets/image/prisma.svg";
 import ireact from "Assets/image/react.svg";
 import itypescript from "Assets/image/typescript.svg";
-import p01 from "Assets/Prisma-store/p01.png";
+import bookList from "Assets/projects/book-lists.gif";
+import dashboard from "Assets/projects/dashboard.gif";
+import prismaStore from "Assets/projects/prisma-store.gif";
+import promptopia from "Assets/projects/promptopia.gif";
 import Project from "./Project";
 
 export default function Work() {
@@ -22,33 +25,41 @@ export default function Work() {
             Project | Collaboration | Exploration
           </h3>
         </div>
-        {/* Projects that I have worked on. */}
-        <Project
-          img={p01}
-          title="Prisma-Store"
-          desc="Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system. Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system."
-          icon={icons}
-        />{" "}
-        <Project
-          img={p01}
-          title="Prisma-Store"
-          desc="Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system. Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system."
-          icon={icons}
-        />{" "}
-        <Project
-          img={p01}
-          title="Prisma-Store"
-          desc="Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system. Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system."
-          icon={icons}
-        />
+        <div className="my-projects">
+          {/* Projects that I have worked on. */}
+          <Project
+            img={prismaStore}
+            title="Prisma-Store"
+            desc="Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system."
+            icon={icons}
+          />{" "}
+          <Project
+            img={promptopia}
+            title="Promptopia"
+            desc="Post and share creative AI prompt to enhance productivity."
+            icon={icons}
+          />{" "}
+          <Project
+            img={dashboard}
+            title="Monitoring Dashboard"
+            desc="Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system. "
+            icon={icons}
+          />
+          <Project
+            img={bookList}
+            title="Book listing"
+            desc="Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system. "
+            icon={icons}
+          />
+        </div>
         <div className="mx-auto pb-16 text-center">
           <a
             target="_blank"
             href="https://github.com/badhon252"
-            className="product-link dark:border-gray-400 bg-indigo-700 text-white text-xl"
+            className="product-link dark:border-gray-400 bg-cyan-300 text-slate-50 dark:text-slate-800 text-xl"
             rel="noreferrer"
           >
-            More Projects
+            More Projects...
           </a>
         </div>{" "}
       </main>

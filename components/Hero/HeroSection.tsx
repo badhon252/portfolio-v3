@@ -26,7 +26,7 @@ export default function HeroSection() {
               I'm Khalid Hossain.
             </h1>
             <h2 className=" text-purple-500 dark:text-cyan-400 my-2 px-4 text-4xl font-extrabold  sm:text-5xl md:text-6xl xl:text-8xl">
-              Frontend Engineer
+              Fullstack Developer
             </h2>
           </div>
           {/* Hero content ======================== */}
@@ -44,7 +44,7 @@ export default function HeroSection() {
                 <button>
                   <Link
                     href="#work"
-                    className="transition-all px-6 py-2 text-lg bg-indigo-500 text-slate-50  hover:px-12 rounded-md inline-block underline my-6"
+                    className="transition-all px-6 py-2 text-lg bg-indigo-500 text-slate-50  hover:px-12 rounded-md inline-block underline my-6 -tracking-tight"
                   >
                     Projects🛠️
                   </Link>
