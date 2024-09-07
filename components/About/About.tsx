@@ -12,7 +12,7 @@ export default function About() {
             About Me
           </h1>
           <p className="text-center text-xl font-medium tracking-widest title">
-            "Turning Ideas into Interactive Reality.💡"
+            &quot;Turning Ideas into Interactive Reality.💡&quot;
           </p>
         </div>
         <article>

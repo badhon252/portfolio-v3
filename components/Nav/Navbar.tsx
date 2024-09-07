@@ -94,7 +94,7 @@ export default function Navbar() {
           <motion.nav
             className={`${
               isOpen ? "flex" : "hidden"
-            } fixed inset-0 bg-gray-800 bg-opacity-95 z-50 flex flex-col items-center justify-center`}
+            } fixed inset-0 bg-gray-800 bg-opacity/95 z-50 flex flex-col items-center justify-center`}
             initial={false}
             animate={isOpen ? "open" : "closed"}
             variants={variants}
