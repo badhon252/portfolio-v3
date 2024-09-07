@@ -15,10 +15,10 @@ export default function Experience() {
           <div className="md:basis-1/3 text-lg font-semibold ">
             {/* Job listing  */}
             <ul className="company mx-8">
-              <li className="brlbd  rounded-lg border px-4 py-2 my-4 text-base">
+              <li className="brlbd  rounded-lg px-4 py-2 my-4 text-base">
                 <Link href="#">Babylon Resource ltd</Link>
               </li>{" "}
-              <li className="brlbd  rounded-lg border px-4 py-2 my-4 text-base">
+              <li className="brlbd  rounded-lg px-4 py-2 my-4 text-base">
                 Freelance
               </li>
             </ul>
