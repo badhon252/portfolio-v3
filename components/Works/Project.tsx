@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Icons from "./Icons";
+import "./Project.module.css";
 
 type IconType = {
   src: string;
@@ -29,13 +30,17 @@ export default function Project({ img, title, desc, icon }: ProjectProps) {
         />
       </div>
 
-      <div className="product-details dark:bg-slate-900 rounded-lg flex flex-col items-center justify-center text-left md:basis-2/5  md:items-end md:text-right pr-4">
+      <div className="product-details bg-gray-50 dark:bg-slate-900 rounded-lg flex flex-col items-center justify-center text-left md:basis-2/5  md:items-end md:text-right pr-4">
         <div className="">
-          <h1 className="my-4 text-xl font-semibold md:mb-6 md:text-2xl title">
+          <h1 className="my-4 text-xl font-semibold md:mb-6 md:text-2xl title p-2 rounded-sm">
             {title}
           </h1>
-          <div className="bg-gradient-to-b from-cyan-100 to-cyan-50 border dark:border-gray-600 dark:text-gray-100 dark:bg-gradient-to-b dark:from-gray-800 dark:to-slate-800 text-slate-700 p-4">
-            <p className="description mb-4 text-sm md:text-base">{desc}</p>
+
+          {/* Bug: How to blur background?  */}
+          <div className="product-desc min-h-32 bg-gradient-to-b from-cyan-100 to-cyan-50 border dark:border-gray-600 dark:text-gray-100 dark:bg-gradient-to-b dark:from-gray-800 dark:to-slate-800 text-slate-700 p-4">
+            <p className="description mb-4 text-sm md:text-base relative z-30">
+              {desc}
+            </p>
           </div>
 
           <div className="tech-stack mb-4">

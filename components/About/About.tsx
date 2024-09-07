@@ -7,15 +7,22 @@ export default function About() {
       id="about"
     >
       <div className="sm:w-12/12 mx-auto md:w-4/6 xl:w-3/6">
-        <h1 className="h1 text-bold my-8 text-center text-4xl font-black md:text-6xl lg:text-8xl">
-          About Me
-        </h1>
-        Hi, I&apos;m Khalid Hossain, a dedicated Frontend Engineer and Python
-        Instructor based in Barishal, Bangladesh. My passion lies in crafting
-        seamless, user-centric web applications using the latest technologies,
-        including Next.js, TypeScript, and TailwindCSS. I&apos;m committed to
-        delivering innovative solutions that not only meet but exceed
-        expectations.
+        <div className=" my-8 text-center ">
+          <h1 className="h1 text-bold text-4xl font-black md:text-6xl lg:text-8xl">
+            About Me
+          </h1>
+          <p className="text-center text-xl font-medium tracking-widest title">
+            &quot;Turning Ideas into Interactive Reality.💡&quot;
+          </p>
+        </div>
+        <article>
+          Hi, I&apos;m Khalid Hossain, a dedicated Frontend Engineer and Python
+          Instructor based in Barishal, Bangladesh. My passion lies in crafting
+          seamless, user-centric web applications using the latest technologies,
+          including Next.js, TypeScript, and TailwindCSS. I&apos;m committed to
+          delivering innovative solutions that not only meet but exceed
+          expectations.{" "}
+        </article>
         <h3 className="about__me-info">My Journey </h3>
         With a BSc in Computer Science and Engineering from the Global
         University of Bangladesh, I&apos;ve built a solid foundation in software

@@ -2,7 +2,7 @@ import Link from "next/link";
 import "styles/style.css";
 export default function Experience() {
   return (
-    <main className="mx-auto bg-gradient-to-t from-slate-100 to-cyan-50  dark:text-gray-100 dark:bg-gradient-to-t dark:from-slate-800 dark:to-gray-950 text-slate-700  py-12 ">
+    <main className="mx-auto bg-gradient-to-t from-slate-100 to-cyan-200  dark:text-gray-100 dark:bg-gradient-to-t dark:from-slate-800 dark:to-gray-950 text-slate-700  py-12 ">
       <section
         id="experience"
         className="sm:w-12/12 mx-auto flex flex-col justify-center md:w-4/6 xl:w-3/6 container text-slate-700 dark:text-gray-200"
@@ -15,10 +15,12 @@ export default function Experience() {
           <div className="md:basis-1/3 text-lg font-semibold ">
             {/* Job listing  */}
             <ul className="company mx-8">
-              <li className="brlbd  rounded-lg border px-2 my-4">
+              <li className="brlbd  rounded-lg px-4 py-2 my-4 text-base">
                 <Link href="#">Babylon Resource ltd</Link>
               </li>{" "}
-              <li className="brlbd  rounded-lg border px-2 my-4">Freelance</li>
+              <li className="brlbd  rounded-lg px-4 py-2 my-4 text-base">
+                Freelance
+              </li>
             </ul>
           </div>
           <div className="md:basis-2/3 border-l-2 border-slate-100 px-8">
