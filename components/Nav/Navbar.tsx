@@ -35,7 +35,7 @@ export default function Navbar() {
     <header className="md:px-8 bg-slate-100 dark:bg-gray-800 sticky top-0 z-50 shadow-sm shadow-gray-300 dark:shadow-gray-600">
       {/* Logo */}
       <section className="container mx-auto flex items-center justify-between px-4 py-2 md:px-8">
-        <div className="logo basis-5/12">
+        <div className="logo ">
           <Link href="/">
             <Image src={logo} alt="KHB" width={40} />
           </Link>

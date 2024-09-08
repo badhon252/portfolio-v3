@@ -36,19 +36,29 @@ export default function HeroSection() {
           >
             {/* Hero image and slogans side by side */}
             <div className="flex flex-col-reverse items-center justify-center space-y-4 md:flex-row md:space-x-8 md:space-y-0 lg:space-x-12">
-              <div className="flex flex-col items-end gap-4">
-                <p className="slogan text-center text-base font-medium text-slate-600 dark:text-gray-100   md:text-xl bg-cyan-200 dark:bg-gray-800 p-6  rounded ">
+              <div className="flex flex-col md:items-end my-4 gap-8">
+                <p className="slogan text-center text-base font-medium text-slate-600 dark:text-gray-100   md:text-xl bg-cyan-200 dark:bg-gray-800 p-6  rounded-lg border border-gray-300">
                   "Determined to Deliver, Passionate to Innovate - Expert in
                   Next.js, TypeScript and Node.js 🚀"
                 </p>
-                <button>
-                  <Link
-                    href="#work"
-                    className="transition-all px-6 py-2 text-lg bg-indigo-600 text-slate-100 font-semibold  hover:px-12 rounded-md inline-block underline my-6 -tracking-tight"
-                  >
-                    Projects🛠️
-                  </Link>
-                </button>
+                <div className="flex gap-4">
+                  <button className="">
+                    <Link
+                      href="#work"
+                      className=" transition-all mx-auto px-6 py-4 text-lg hover:bg-purple-600 hover:text-slate-100 border-gray-400 border font-semibold  hover:px-8 rounded-md  my-6 -tracking-tight"
+                    >
+                      View Projects🛠️
+                    </Link>
+                  </button>
+                  <button className="">
+                    <Link
+                      href="mailto:dev.khalidhossain@gmail.com"
+                      className=" transition-all mx-auto px-6 py-4 text-lg bg-indigo-600 text-slate-100 font-semibold  hover:px-8 rounded-md  my-6 -tracking-tight"
+                    >
+                      Let's collaborate.
+                    </Link>
+                  </button>
+                </div>
               </div>
               {/* Hero img  */}
               <div className="lg:w-128 xl:w-128 sm:min-w-max w-96 rounded-full shadow-lg overflow-hidden ">
