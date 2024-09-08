@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function About() {
   return (
     <section
-      className="min-h-screen p-4 py-20 bg-gradient-to-t from-slate-50 to-cyan-50  dark:text-gray-100 dark:bg-gradient-to-t dark:from-slate-800 dark:to-gray-950 text-slate-700 "
+      className="min-h-screen p-4 py-20 bg-gradient-to-t from-slate-50 to-teal-200  dark:text-gray-100 dark:bg-gradient-to-t dark:from-slate-800 dark:to-gray-950 text-slate-700 "
       id="about"
     >
       <div className="sm:w-12/12 mx-auto md:w-4/6 xl:w-3/6">
@@ -11,8 +11,8 @@ export default function About() {
           <h1 className="h1 text-bold text-4xl font-black md:text-6xl lg:text-8xl">
             About Me
           </h1>
-          <p className="text-center text-xl font-medium tracking-widest title">
-            &quot;Turning Ideas into Interactive Reality.💡&quot;
+          <p className="text-center  tracking-widest text-indigo-500">
+            &quot;Turning Ideas into Interactive Reality.&quot;💡
           </p>
         </div>
         <article>

@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <footer
       id="contact"
-      className="bg-gradient-to-b from-slate-50 to-cyan-100  dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700 "
+      className="bg-gradient-to-b from-slate-50 to-teal-200  dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700 "
     >
       <main className="flex justify-between flex-col mx-auto min-h-screen p-4 sm:w-11/12 md:w-4/6 xl:w-3/6 text-base">
         <section>

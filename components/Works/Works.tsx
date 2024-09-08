@@ -13,7 +13,7 @@ export default function Work() {
   const icons = [ireact, inext, itypescript, igit, iprisma];
   return (
     <section
-      className="bg-gradient-to-b from-slate-100 to-cyan-50  dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700 "
+      className="bg-gradient-to-b from-slate-100 to-teal-200  dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700 "
       id="work"
     >
       <main className="container mx-auto">
@@ -60,7 +60,7 @@ export default function Work() {
           <a
             target="_blank"
             href="https://github.com/badhon252"
-            className="product-link dark:border-gray-400 text-slate-50 dark:text-slate-800 "
+            className="product-link dark:border-gray-400 text-slate-800 dark:text-slate-50 "
             rel="noreferrer"
           >
             More Projects...
