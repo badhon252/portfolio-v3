@@ -30,15 +30,14 @@ export default function Project({
         <Image
           src={img}
           alt={`Image for ${title}`} // Enhanced alt text
-          className="cursor-pointer  shadow-md transition-shadow duration-300 ease-in-out hover:shadow-lg border rounded-s-xl"
+          className="cursor-pointer  shadow-md transition-shadow duration-300 ease-in-out hover:shadow-lg border rounded-s-xl object-contain"
           layout="responsive"
           width={700}
           height={475}
         />
-        🎬 i thx
       </div>
 
-      <div className="product-details  bg-gray-50 dark:bg-slate-900 rounded-lg flex flex-col items-center justify-center text-left md:basis-2/5  md:items-end md:text-right md:pr-4 p-4 hover:z-20">
+      <div className="product-details  bg-teal-50 dark:bg-slate-900 rounded-lg flex flex-col items-center justify-center text-left md:basis-2/5  md:items-end md:text-right md:pr-4 p-4 hover:z-20">
         <h1 className="text-4xl md:text-8xl font-black text-purple-500 absolute left-0 top-0 z-10">
           #{serial}
         </h1>
