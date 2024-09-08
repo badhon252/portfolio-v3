@@ -10,7 +10,7 @@ export default function HeroSection() {
   return (
     <header
       id="heroSection"
-      className="flex flex-col justify-between md:min-h-screen bg-gradient-to-b from-slate-100 to-cyan-200  dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700 "
+      className="flex flex-col justify-between  bg-gradient-to-b from-slate-100 to-cyan-200  dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700 "
     >
       <section className="container mx-auto">
         <div
@@ -32,7 +32,7 @@ export default function HeroSection() {
           {/* Hero content ======================== */}
           <div
             id="hero-content"
-            className="flex flex-col justify-center items-center relative"
+            className="flex flex-col justify-center items-center mb-16"
           >
             {/* Hero image and slogans side by side */}
             <div className="flex flex-col-reverse items-center justify-center space-y-4 md:flex-row md:space-x-8 md:space-y-0 lg:space-x-12">
@@ -44,7 +44,7 @@ export default function HeroSection() {
                 <button>
                   <Link
                     href="#work"
-                    className="transition-all px-6 py-2 text-lg bg-indigo-500 text-slate-50  hover:px-12 rounded-md inline-block underline my-6 -tracking-tight"
+                    className="transition-all px-6 py-2 text-lg bg-indigo-600 text-slate-100 font-semibold  hover:px-12 rounded-md inline-block underline my-6 -tracking-tight"
                   >
                     Projects🛠️
                   </Link>

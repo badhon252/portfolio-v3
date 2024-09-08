@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function About() {
   return (
     <section
-      className="min-h-screen p-4 py-20 bg-gradient-to-t from-slate-100 to-cyan-50  dark:text-gray-100 dark:bg-gradient-to-t dark:from-slate-800 dark:to-gray-950 text-slate-700 "
+      className="min-h-screen p-4 py-20 bg-gradient-to-t from-slate-50 to-cyan-50  dark:text-gray-100 dark:bg-gradient-to-t dark:from-slate-800 dark:to-gray-950 text-slate-700 "
       id="about"
     >
       <div className="sm:w-12/12 mx-auto md:w-4/6 xl:w-3/6">
@@ -23,7 +23,7 @@ export default function About() {
           delivering innovative solutions that not only meet but exceed
           expectations.{" "}
         </article>
-        <h3 className="about__me-info">My Journey </h3>
+        <h2 className="about__me-info">My Journey </h2>
         With a BSc in Computer Science and Engineering from the Global
         University of Bangladesh, I&apos;ve built a solid foundation in software
         development. Over the years, I&apos;ve honed my skills through various
