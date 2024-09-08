@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <footer
       id="contact"
-      className="bg-gradient-to-b from-slate-100 to-cyan-100  dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700 "
+      className="bg-gradient-to-b from-slate-50 to-cyan-100  dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700 "
     >
       <main className="flex justify-between flex-col mx-auto min-h-screen p-4 sm:w-11/12 md:w-4/6 xl:w-3/6 text-base">
         <section>
@@ -38,70 +38,75 @@ export default function Contact() {
         {/* Connect with me ================= */}
         <section>
           <div className="flex justify-between items-center flex-wrap">
-            <ul className="flex flex-col gap-4 social-links my-4">
+            <div>
               <h1 className="h2 text-xl font-bold my-4 border-b">
                 Connect me Via.
               </h1>
-              <li>
-                <Link
-                  href="https://www.facebook.com/badhon252"
-                  target="_blank"
-                  className="underline"
-                >
-                  @facebook/badhon252
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://www.linkedin.com/in/khalidhossainbadhon/"
-                  target="_blank"
-                  className="underline"
-                >
-                  @linkedin/khalidhossainbadhon
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://github.com/badhon252/"
-                  target="_blank"
-                  className="underline"
-                >
-                  @github/badhon252
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://t.me/khalidhossainbadhon"
-                  target="_blank"
-                  className="underline"
-                >
-                  @t.me/khalidhossain
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://twitter.com/badhon252"
-                  target="_blank"
-                  className="underline"
-                >
-                  @twitter.com/badhon252
-                </Link>
-              </li>
-            </ul>
+              <ul className="flex flex-col gap-4 social-links my-4">
+                <li>
+                  <Link
+                    href="https://www.facebook.com/badhon252"
+                    target="_blank"
+                    className="underline"
+                  >
+                    @facebook/badhon252
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://www.linkedin.com/in/khalidhossainbadhon/"
+                    target="_blank"
+                    className="underline"
+                  >
+                    @linkedin/khalidhossainbadhon
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://github.com/badhon252/"
+                    target="_blank"
+                    className="underline"
+                  >
+                    @github/badhon252
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://t.me/khalidhossainbadhon"
+                    target="_blank"
+                    className="underline"
+                  >
+                    @t.me/khalidhossain
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://twitter.com/badhon252"
+                    target="_blank"
+                    className="underline"
+                  >
+                    @twitter.com/badhon252
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-            <ul>
+            <div>
+              {" "}
               <h1 className="text-xl font-bold py-4 border-b">Freelance: </h1>
-              <li className="my-4 underline">
-                <Link href={"https://www.upwork.com/freelancers/badhon252"}>
-                  @Upwork/badhon252
-                </Link>
-              </li>
-              <li className="my-4 underline">
-                <Link href={"https://www.fiverr.com/fiverr/dev_khalid_007"}>
-                  @fiverr/dev_khalid_007
-                </Link>
-              </li>
-            </ul>
+              <ul>
+                <li className="my-4 underline">
+                  <Link href={"https://www.upwork.com/freelancers/badhon252"}>
+                    @Upwork/badhon252
+                  </Link>
+                </li>
+                <li className="my-4 underline">
+                  <Link href={"https://www.fiverr.com/fiverr/dev_khalid_007"}>
+                    @fiverr/dev_khalid_007
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
             <Signature />
           </div>

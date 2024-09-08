@@ -13,7 +13,7 @@ export default function Work() {
   const icons = [ireact, inext, itypescript, igit, iprisma];
   return (
     <section
-      className="bg-gradient-to-b from-slate-100 to-cyan-100  dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700 "
+      className="bg-gradient-to-b from-slate-100 to-cyan-50  dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700 "
       id="work"
     >
       <main className="container mx-auto">
@@ -21,42 +21,46 @@ export default function Work() {
           <h1 className=" text-4xl font-black md:text-6xl lg:text-8xl">
             Works
           </h1>
-          <h3 className=" title inline-block px-4 tracking-widest">
+          <h2 className=" title inline-block px-4 tracking-widest">
             Project | Collaboration | Exploration
-          </h3>
+          </h2>
         </div>
         <div className="my-projects">
           {/* Projects that I have worked on. */}
           <Project
             img={prismaStore}
             title="Prisma-Store"
-            desc="Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system."
+            desc="Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system.Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system.Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system.Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system."
             icon={icons}
+            serial="1"
           />{" "}
           <Project
             img={promptopia}
             title="Promptopia"
             desc="Post and share creative AI prompt to enhance productivity."
             icon={icons}
+            serial="2"
           />{" "}
           <Project
             img={dashboard}
             title="Monitoring Dashboard"
             desc="Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system. "
             icon={icons}
+            serial="3"
           />
           <Project
             img={bookList}
             title="Book listing"
             desc="Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system. "
             icon={icons}
+            serial="4"
           />
         </div>
-        <div className="mx-auto pb-16 text-center">
+        <div className="mx-auto  text-center p-16">
           <a
             target="_blank"
             href="https://github.com/badhon252"
-            className="product-link dark:border-gray-400 bg-cyan-300 text-slate-50 dark:text-slate-800 text-xl"
+            className="product-link dark:border-gray-400 text-slate-50 dark:text-slate-800 "
             rel="noreferrer"
           >
             More Projects...
