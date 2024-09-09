@@ -13,10 +13,10 @@ export default function Work() {
   const icons = [ireact, inext, itypescript, igit, iprisma];
   return (
     <section
-      className="bg-gradient-to-b from-slate-100 to-teal-200  dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700 "
+      className="bg-gradient-to-b from-slate-100 to-teal-200 dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700 "
       id="work"
     >
-      <main className="container mx-auto">
+      <main className="container mx-auto md:w-4/6">
         <div className="work-title bg-work py-16  text-center">
           <h1 className=" text-4xl font-black md:text-6xl lg:text-8xl">
             Works
@@ -30,7 +30,7 @@ export default function Work() {
           <Project
             img={prismaStore}
             title="Prisma-Store"
-            desc="Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system.Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system.Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system.Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system."
+            desc="Prisma Store eCommerce Store & Web Content management Application (CMA). Complete integreted Stripe payment system."
             icon={icons}
             serial="1"
           />{" "}
@@ -56,7 +56,7 @@ export default function Work() {
             serial="4"
           />
         </div>
-        <div className="mx-auto  text-center p-16">
+        <div className="mx-auto text-center p-16">
           <a
             target="_blank"
             href="https://github.com/badhon252"

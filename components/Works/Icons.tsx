@@ -12,9 +12,9 @@ interface IconsProps {
 
 export default function Icons({ icons }: IconsProps) {
   return (
-    <ul className="flex justify-end items-center">
+    <ul className="flex justify-center md:justify-end items-center">
       {icons.map((i, index) => (
-        <li key={index} className="mx-2 my-4 w-9">
+        <li key={index} className="m-2 w-8">
           <Image src={i.src} alt="" height={i.height} width={i.width} />
         </li>
       ))}

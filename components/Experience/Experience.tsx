@@ -15,13 +15,13 @@ interface ExperienceDetails {
 const experienceDetails: ExperienceDetails[] = [
   {
     companyName: "Babylon Resource ltd",
-    jobTitle: "Software Engineer",
-    timePeriod: "March 2022 - September 2023",
+    jobTitle: "Programming Instructor",
+    timePeriod: "November 2023 - june 2024",
     responsibilities: [
-      "Developed and maintained web applications using modern JavaScript frameworks.",
-      "Collaborated with cross-functional teams to deliver projects within tight deadlines.",
-      "Improved application performance and ensured code quality through testing.",
-      "Mentored junior developers and provided code reviews.",
+      "<b>Delivered Comprehensive Training:</b> Led engaging and interactive practical Python programming courses, passionately teaching a diverse group of students and equipping them with essential skills in Python for real-world applications.",
+      "<b>Developed Custom Curricula:</b> Created and refined course materials to meet the evolving needs of students, ensuring a deep understanding of Python fundamentals, object-oriented programming, and advanced concepts.",
+      "<b>Achieved High Student Success Rates:</b> Fostered an interactive learning environment, resulting in exceptional student performance and high course completion rates. Received positive feedback for making complex topics accessible and engaging.",
+      "<b>Mentored Aspiring Developers:</b> Provided ongoing support and mentorship to students, helping them build confidence in their coding abilities and guiding them in their journey towards becoming proficient Python developers.",
     ],
   },
   {
@@ -29,8 +29,7 @@ const experienceDetails: ExperienceDetails[] = [
     jobTitle: "Full-stack Developer",
     timePeriod: "September 2023 - present",
     responsibilities: [
-      "Worked on various freelance projects, delivering end-to-end solutions.",
-      "Specialized in React, Node.js, and PostgreSQL to create full-stack applications.",
+      "Specialized in React, Nextjs, Node.js, and TypeScript to create full-stack applications.",
       "Provided consultation services to clients, focusing on performance optimization.",
       "Maintained long-term relationships with clients, ensuring their satisfaction.",
     ],
@@ -49,7 +48,7 @@ export default function Experience() {
   };
 
   return (
-    <main className="md:min-h-screen mx-auto md:flex md:items-center bg-gradient-to-t from-slate-100 to-cyan-200 dark:text-gray-100 dark:bg-gradient-to-t dark:from-slate-800 dark:to-gray-950 text-slate-700 py-12">
+    <main className="md:min-h-screen  mx-auto md:flex md:items-center bg-gradient-to-t from-slate-100 to-cyan-200 dark:text-gray-100 dark:bg-gradient-to-t dark:from-slate-800 dark:to-gray-950 text-slate-700 py-12">
       {/* Main container for the experience section */}
       <section
         id="experience"
@@ -70,7 +69,7 @@ export default function Experience() {
                   key={experience.companyName} // Unique key for each list item
                   className={` rounded-lg py-2 md:px-4 my-4 text-base cursor-pointer ${
                     selectedCompany === experience.companyName
-                      ? "bg-teal-300 dark:text-slate-800" // Highlight the selected company
+                      ? "border-l-8 border-indigo-500 bg-cyan-300/50 dark:bg-slate-700/50" // Highlight the selected company
                       : ""
                   }`}
                   onClick={() => handleCompanyClick(experience.companyName)} // Handle click to show job description
@@ -84,7 +83,7 @@ export default function Experience() {
           {/* Main Content: Job Description */}
           <div
             id="jobDescription"
-            className="md:basis-2/3 border-l-2 border-slate-100 px-8"
+            className="md:basis-2/3 border-l-2 dark:border-slate-800 px-8"
           >
             {experienceDetails.map(
               (experience) =>
@@ -96,7 +95,9 @@ export default function Experience() {
                     transition={{ duration: 0.5 }} // Duration of the animation
                   >
                     {/* Job title and time period */}
-                    <h2 className="text-xl">{experience.jobTitle}</h2>
+                    <h2 className="text-xl font-semibold">
+                      {experience.jobTitle}
+                    </h2>
                     <p className="text-sm text-indigo-500">
                       {experience.timePeriod}
                     </p>

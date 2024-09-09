@@ -15,7 +15,7 @@ export default function HeroSection() {
       <section className="container mx-auto">
         <div
           id="hero"
-          className="container mx-auto flex flex-col items-center justify-center px-4 py-12 text-center  dark:text-gray-300"
+          className="flex flex-col items-center justify-center px-4 py-12 text-center  dark:text-gray-300"
         >
           {/* Introduction */}
           <div className="mb-4">
@@ -37,7 +37,7 @@ export default function HeroSection() {
             {/* Hero image and slogans side by side */}
             <div className="flex flex-col-reverse items-center justify-center space-y-4 md:flex-row md:space-x-8 md:space-y-0 lg:space-x-12">
               <div className="flex flex-col md:items-end my-4 gap-8">
-                <p className="slogan text-center text-base font-medium text-slate-600 dark:text-gray-100 md:text-xl bg-cyan-200 dark:bg-gray-800 p-6  rounded-lg border border-gray-300 dark:border-gray-700">
+                <p className="slogan text-center text-base font-medium text-slate-600 dark:text-gray-100 md:text-xl bg-cyan-200 dark:bg-gray-800 p-6  rounded-lg shadow-md dark:shadow-2xl">
                   "Determined to Deliver, Passionate to Innovate - Expert in
                   Next.js, TypeScript and Node.js 🚀"
                 </p>
