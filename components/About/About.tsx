@@ -11,7 +11,7 @@ export default function About() {
           <h1 className="h1 text-bold text-4xl font-black md:text-6xl lg:text-8xl">
             About Me
           </h1>
-          <p className="text-center  tracking-widest text-indigo-500">
+          <p className="text-center  tracking-widest text-purple-500 dark:text-purple-400 font-medium">
             &quot;Turning Ideas into Interactive Reality.&quot;💡
           </p>
         </div>
