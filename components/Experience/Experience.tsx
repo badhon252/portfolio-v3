@@ -40,7 +40,7 @@ const experienceDetails: ExperienceDetails[] = [
 export default function Experience() {
   // State to keep track of which company's job description is currently open
   const [selectedCompany, setSelectedCompany] = useState<string>(
-    experienceDetails[0].companyName, // Default to the first company being selected/open
+    experienceDetails[0]?.companyName || "", // Default to an empty string if experienceDetails is undefined or empty
   );
 
   // Function to handle company clicks and expand the corresponding job description
