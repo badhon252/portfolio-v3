@@ -8,7 +8,6 @@ export default function Home() {
   return (
     <main className="  overflow-hidden" id="MainTag">
       <HeroSection />
-
       <Experience />
       <Works />
       <About />
