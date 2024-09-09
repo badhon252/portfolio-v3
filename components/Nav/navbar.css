@@ -18,3 +18,14 @@
 .nav-link:hover {
   text-decoration: underline;
 }
+/* navbar.css */
+.navbar {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.3
+  ); /* Set a semi-transparent background */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+}

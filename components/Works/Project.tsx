@@ -1,3 +1,5 @@
+// card for projects that I have worked on.
+
 import Image from "next/image";
 import Link from "next/link";
 import Icons from "./Icons";
