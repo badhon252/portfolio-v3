@@ -15,9 +15,15 @@ export default function Error({
   }, [error]);
 
   return (
-    <div>
-      <h2>Something went wrong!</h2>
+    <div className="flex h-screen flex-col items-center justify-center bg-white dark:bg-black">
+      <h2 className="text-red-500 dark:text-white text-3xl font-bold">
+        Oh no!
+      </h2>
+      <h2 className=" dark:text-white text-2xl font-bold">
+        Something went wrong!
+      </h2>
       <button
+        className=" text-black dark:text-white font-bold border py-2 px-4 m-4 rounded-sm"
         onClick={
           // Attempt to recover by trying to re-render the segment
           () => reset()
