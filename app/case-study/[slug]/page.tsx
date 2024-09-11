@@ -1,6 +1,7 @@
 import Image from "next/image";
+import type { StaticImageData } from "next/image";
 import { notFound } from "next/navigation";
-import { FC } from "react"; // React functional component type
+import { FC } from "react";
 import caseStudies from "components/CaseStudy/caseStudiesData";
 
 interface CaseStudy {
@@ -8,8 +9,13 @@ interface CaseStudy {
   title: string;
   description: string;
   content: string;
-  image: string;
-  technologies: string[];
+  image: StaticImageData; // Updated type
+  tech: string[];
+  url: {
+    study: string;
+    github: string;
+    live: string;
+  };
 }
 
 interface CaseStudyPageProps {
@@ -43,9 +49,9 @@ const CaseStudyPage: FC<CaseStudyPageProps> = ({ params }) => {
         <p className="text-xl mb-4">{caseStudy?.description}</p>
         <div className="prose max-w-none">{caseStudy?.content}</div>
         <h2 className="text-2xl mt-6">Technologies Used:</h2>
-        <ul className="list-disc list-inside">
-          {caseStudy?.technologies.map((tech) => <li key={tech}>{tech}</li>)}
-        </ul>
+        {/* <ul className="list-disc list-inside">
+          {caseStudy?.tech.map((tech) => <li key={tech}>{tech}</li>)}
+        </ul> */}
       </div>
     </section>
   );
