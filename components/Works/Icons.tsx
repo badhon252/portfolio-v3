@@ -1,13 +1,7 @@
 import Image from "next/image";
 
-type IconType = {
-  src: string;
-  height: number;
-  width: number;
-};
-
 interface IconsProps {
-  icons: IconType[];
+  icons: string[];
 }
 
 export default function Icons({ icons }: IconsProps) {
@@ -15,7 +9,7 @@ export default function Icons({ icons }: IconsProps) {
     <ul className="flex justify-center md:justify-end items-center">
       {icons.map((i, index) => (
         <li key={index} className="m-2 w-8">
-          <Image src={i.src} alt="" height={i.height} width={i.width} />
+          <Image src={i} alt="" />
         </li>
       ))}
     </ul>
