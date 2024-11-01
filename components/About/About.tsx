@@ -22,7 +22,7 @@ export default function About() {
 
   return (
     <ScrollArea className="h-screen bg-slate-50 text-black dark:bg-slate-800 dark:text-slate-50">
-      <section className=" px-4 py-12  md:py-24">
+      <section className="px-4 py-12 md:py-24">
         <motion.div
           className="container mx-auto max-w-3xl space-y-8"
           initial="initial"
@@ -36,7 +36,10 @@ export default function About() {
               About Me
             </h1>
             <p className="mt-2 text-lg font-medium text-primary">
-              &quot;Turning Ideas into Interactive Reality.&quot;💡
+              &quot;{" "}
+              <span className="text-indigo-500">
+                Turning Ideas into Interactive Reality.&quot;💡
+              </span>
             </p>
           </motion.div>
 
@@ -58,22 +61,29 @@ export default function About() {
           <motion.div variants={fadeIn}>
             <Tabs defaultValue="journey" className="w-full">
               <TabsList className="grid w-full grid-cols-4">
-                <TabsTrigger value="journey">
-                  <GraduationCapIcon className="mr-2 size-4" />
-                  Journey
-                </TabsTrigger>
-                <TabsTrigger value="work">
-                  <CodeIcon className="mr-2 size-4" />
-                  Work
-                </TabsTrigger>
-                <TabsTrigger value="beyond">
-                  <RocketIcon className="mr-2 size-4" />
-                  Beyond
-                </TabsTrigger>
-                <TabsTrigger value="certifications">
-                  <LightbulbIcon className="mr-2 size-4" />
-                  Certifications
-                </TabsTrigger>
+                {[
+                  {
+                    value: "journey",
+                    label: "Journey",
+                    Icon: GraduationCapIcon,
+                  },
+                  { value: "work", label: "Work", Icon: CodeIcon },
+                  { value: "beyond", label: "Beyond", Icon: RocketIcon },
+                  {
+                    value: "certifications",
+                    label: "Certifications",
+                    Icon: LightbulbIcon,
+                  },
+                ].map(({ value, label, Icon }) => (
+                  <TabsTrigger
+                    key={value}
+                    value={value}
+                    className="flex items-center justify-center gap-2 py-3 text-center text-sm font-medium transition-all duration-200 rounded-md hover:bg-gray-200 hover:text-black dark:hover:bg-gray-700 dark:hover:text-slate-50 focus:outline-none focus-visible:ring focus-visible:ring-primary-300 aria-selected:bg-white aria-selected:text-black dark:aria-selected:bg-gray-600 dark:aria-selected:text-slate-50"
+                  >
+                    <Icon className="mr-2 size-4" />
+                    {label}
+                  </TabsTrigger>
+                ))}
               </TabsList>
               <TabsContent value="journey">
                 <Card>
@@ -144,7 +154,7 @@ export default function About() {
                           href="https://ledp.ictd.gov.bd/certificate/?regid=282683"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center text-primary hover:underline"
+                          className="inline-flex items-center text-primary hover:underline dark:text-slate-100"
                         >
                           Web Design and Development - WDD
                           <Badge variant="outline" className="ml-2">
