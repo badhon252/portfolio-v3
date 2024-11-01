@@ -10,7 +10,7 @@ export default function HeroSection() {
   return (
     <header
       id="heroSection"
-      className="flex flex-col justify-between  bg-gradient-to-b from-slate-100 to-cyan-200  dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700 "
+      className="flex flex-col justify-between  bg-gradient-to-b from-slate-50 to-slate-100  dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700 "
     >
       <section className="container mx-auto">
         <div
@@ -37,7 +37,7 @@ export default function HeroSection() {
             {/* Hero image and slogans side by side */}
             <div className="flex flex-col-reverse items-center justify-center space-y-4 md:flex-row md:space-x-8 md:space-y-0 lg:space-x-12">
               <div className="flex flex-col md:items-end my-4 gap-8">
-                <p className="slogan text-center text-base font-medium text-slate-600 dark:text-gray-100 md:text-xl bg-cyan-200 dark:bg-gray-800 p-6  rounded-lg shadow-md dark:shadow-2xl">
+                <p className="slogan text-base font-medium text-slate-600 dark:text-gray-100 md:text-xl bg-slate-50 dark:bg-gray-800 p-6  rounded-lg shadow-md dark:shadow-2xl">
                   "Determined to Deliver, Passionate to Innovate - Expert in
                   Next.js, TypeScript and Node.js 🚀"
                 </p>
