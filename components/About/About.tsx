@@ -15,9 +15,16 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "components/ui/tabs";
 
 export default function About() {
   const fadeIn = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 },
+    hidden: {
+      opacity: 0,
+      y: 20,
+      transition: { duration: 0.8 },
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8 },
+    },
   };
 
   return (

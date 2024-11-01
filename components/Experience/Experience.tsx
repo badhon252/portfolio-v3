@@ -91,13 +91,22 @@ export default function Experience() {
     const currentIndex = experienceDetails.findIndex(
       (exp) => exp.companyName === selectedCompany,
     );
+
     if (e.key === "ArrowUp" && currentIndex > 0) {
-      handleCompanyClick(experienceDetails[currentIndex - 1].companyName);
+      // Check if the previous index is within bounds
+      const previousExperience = experienceDetails[currentIndex - 1];
+      if (previousExperience) {
+        handleCompanyClick(previousExperience.companyName);
+      }
     } else if (
       e.key === "ArrowDown" &&
       currentIndex < experienceDetails.length - 1
     ) {
-      handleCompanyClick(experienceDetails[currentIndex + 1].companyName);
+      // Check if the next index is within bounds
+      const nextExperience = experienceDetails[currentIndex + 1];
+      if (nextExperience) {
+        handleCompanyClick(nextExperience.companyName);
+      }
     }
   };
 
