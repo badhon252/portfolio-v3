@@ -4,7 +4,7 @@ import Project from "./Project"; // Import the Project component
 export default function Work() {
   return (
     <section
-      className="bg-gradient-to-b from-slate-100 to-teal-200 dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700"
+      className="bg-gradient-to-b from-slate-50 to-slate-100 dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700"
       id="work"
     >
       <main className="container mx-auto md:w-4/6">
