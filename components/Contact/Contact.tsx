@@ -78,10 +78,10 @@ export default function Contact() {
   return (
     <footer
       id="contact"
-      className="relative bg-gradient-to-b bg-slate-50 to-secondary/20 dark:bg-slate-900 dark:text-slate-50 dark:to-secondary/10 overflow-hidden"
+      className="relativ min-h-screen flex justify-center items-center bg-gradient-to-b bg-slate-100 to-secondary/20 dark:bg-slate-900 dark:text-slate-50 dark:to-secondary/10 overflow-hidden"
     >
       <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-      <main className="container relative mx-auto min-h-screen px-4 py-12 md:py-24">
+      <main className="container relative mx-auto px-4 py-12 md:py-24">
         <motion.h1
           className="mb-12 text-center text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
           initial={{ opacity: 0, y: -50 }}
