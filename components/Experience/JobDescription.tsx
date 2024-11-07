@@ -63,10 +63,12 @@ export default function Experience() {
               {experienceDetails.map((experience) => (
                 <li
                   key={experience.companyName}
-                  className="brlbd rounded-lg py-2 my-4 text-base cursor-pointer"
+                  className="rounded-lg py-2 my-4 text-base cursor-pointer"
                   onClick={() => handleCompanyClick(experience.companyName)}
                 >
-                  <Link href="#">{experience.companyName}</Link>
+                  <Link href="#" className="text-blue-700">
+                    {experience.companyName}
+                  </Link>
                 </li>
               ))}
             </ul>

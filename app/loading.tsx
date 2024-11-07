@@ -1,5 +1,9 @@
-import React from "react";
+import LoadingUI from "components/Loading/loading";
 
 export default function loading() {
-  return <div>Loading...</div>;
+  return (
+    <div>
+      <LoadingUI />
+    </div>
+  );
 }

@@ -1,10 +1,11 @@
-import Image, { StaticImageData } from "next/image";
+"use client";
 import Link from "next/link";
 import Icons from "./Icons";
+import { ImageCarousel } from "../../hooks/ImageCarousel";
 import "./Project.module.css";
 
 interface ProjectProps {
-  img: StaticImageData;
+  img: any;
   title: string;
   desc: string;
   serial: string;
@@ -21,19 +22,15 @@ export default function Project({
   urls,
 }: ProjectProps) {
   return (
-    <section className="product m-8 flex flex-col md:flex-row relative dark:shadow-sky-950/50 my-12 shadow-sm transition-all hover:shadow-lg">
+    <section className="product m-8 flex flex-col md:flex-row relative dark:shadow-sky-950/50 my-12 shadow-sm transition-all ">
       <div className="product-img md:basis-7/12">
-        <Image
-          src={img}
-          alt={`Image for ${title}`}
-          className="cursor-pointer shadow-md transition-shadow duration-300 ease-in-out border object-contain"
-          layout="responsive"
-          width={700}
-          height={475}
-        />
+        {
+          // TODO: Project's image isn't optimized properly. fix size, positioning for home page
+        }
+        <ImageCarousel images={img} />
       </div>
       <div className="product-details md:basis-5/12 shadow-lg flex flex-col items-center justify-center text-left md:items-end md:text-right md:pr-4 pb-4 hover:z-20 dark:bg-gray-800">
-        <h1 className="text-4xl md:text-8xl font-black text-purple-500 absolute left-0 top-0 z-10">
+        <h1 className="text-4xl md:text-8xl font-black text-indigo-500 absolute left-0 top-0 z-10">
           #{serial}
         </h1>
         <div>
@@ -52,7 +49,10 @@ export default function Project({
         <ul className="links flex flex-wrap gap-4">
           {urls.map((link, index) => (
             <li className="product-link dark:border-gray-300" key={index}>
-              <Link href={link} className="hover:underline">
+              <Link
+                href={link}
+                className="hover:underline bg-slate-950  text-slate-50 px-4 py-2 rounded-lg"
+              >
                 {index === 2
                   ? "Code"
                   : index === 1

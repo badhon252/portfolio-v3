@@ -4,13 +4,13 @@
 import "./Hero.style.css";
 import Image from "next/image";
 import Link from "next/link";
-import hero from "Assets/image/badhon252.png";
+import hero from "public/Assets/image/badhon252.png";
 
 export default function HeroSection() {
   return (
     <header
       id="heroSection"
-      className="flex flex-col justify-between  bg-gradient-to-b from-slate-50 to-slate-100  dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700 "
+      className="flex flex-col justify-between pt-8 bg-gradient-to-b from-slate-50 to-slate-100  dark:text-gray-100 dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-950 text-slate-700 "
     >
       <section className="container mx-auto">
         <div

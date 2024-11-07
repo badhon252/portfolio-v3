@@ -1,87 +1,170 @@
-import Image from "next/image";
+/* eslint-disable tailwindcss/migration-from-tailwind-2 */
+"use client";
+import { motion } from "framer-motion";
+import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
 
-interface CaseStudyProps {
-  img: string;
-  title: string;
-  overview: string;
-  objectives: string;
-  approach: string;
-  challenges: string;
-  results: string;
-}
+import { CaseStudyProp } from "components/types/CaseStudy";
 
-const caseStudy: CaseStudyProps = {
-  img: "/path/to/your/image.jpg", // Update with your image path
-  title: "Innovative Project Management Tool",
-  overview:
-    "A comprehensive tool developed to streamline project management and enhance team collaboration.",
-  objectives:
-    "1. To simplify task tracking and project organization.\n2. To improve team communication and document sharing.\n3. To provide real-time project insights and analytics.",
-  approach:
-    "Implemented a web-based platform using modern technologies including Next.js for the frontend, Node.js for the backend, and PostgreSQL for the database. Utilized a modular approach to ensure scalability and maintainability.",
-  challenges:
-    "1. Integrating real-time data synchronization across different users.\n2. Ensuring data security and privacy for sensitive project information.\n3. Handling high concurrency and performance optimization.",
-  results:
-    "1. Reduced project management overhead by 30%.\n2. Enhanced team productivity and communication.\n3. Achieved a 95% user satisfaction rate based on feedback.",
+import { Badge } from "components/ui/badge";
+import { Button } from "components/ui/button";
+import { Card, CardContent } from "components/ui/card";
+import { ImageCarousel } from "hooks/ImageCarousel";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
 };
 
-export default function CaseStudy() {
-  return (
-    <section className="bg-slate-100 dark:bg-slate-900 text-slate-950 dark:text-slate-200">
-      <div className="case-study container mx-auto px-4 py-8">
-        <h1 className="mb-6 text-4xl font-bold">{caseStudy.title}</h1>
+const Section: React.FC<{
+  title: string;
+  children: React.ReactNode;
+  delay?: number;
+}> = ({ title, children, delay = 0 }) => (
+  <motion.section
+    variants={fadeInUp}
+    initial="hidden"
+    animate="visible"
+    transition={{ duration: 0.5, delay }}
+    className="space-y-4"
+  >
+    <h2 className="text-2xl font-semibold">{title}</h2>
+    {children}
+  </motion.section>
+);
 
-        <div className="mb-8 flex flex-col gap-8 md:flex-row">
-          <div className="flex-1">
-            <Image
-              src={caseStudy.img}
-              alt={`Image for ${caseStudy.title}`}
-              className="rounded-lg shadow-md"
-              layout="responsive"
-              width={800}
-              height={450}
-            />
-          </div>
+const TechStack: React.FC<{ technologies: string[] }> = ({ technologies }) => (
+  <div className="flex flex-wrap gap-2">
+    {technologies.map((tech) => (
+      <Badge
+        key={tech}
+        className="bg-slate-50 hover:bg-slate-100  dark:bg-slate-950 px-4 py-2 rounded-lg"
+      >
+        {tech}
+      </Badge>
+    ))}
+  </div>
+);
 
-          <div className="flex-1">
-            <section className="mb-8">
-              <h2 className="mb-4 text-3xl font-semibold">Project Overview</h2>
-              <p className="text-lg">{caseStudy.overview}</p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="mb-4 text-3xl font-semibold">Objectives</h2>
-              <p className="whitespace-pre-line text-lg">
-                {caseStudy.objectives}
-              </p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="mb-4 text-3xl font-semibold">Approach</h2>
-              <p className="whitespace-pre-line text-lg">
-                {caseStudy.approach}
-              </p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="mb-4 text-3xl font-semibold">Challenges</h2>
-              <p className="whitespace-pre-line text-lg">
-                {caseStudy.challenges}
-              </p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="mb-4 text-3xl font-semibold">Results</h2>
-              <p className="whitespace-pre-line text-lg">{caseStudy.results}</p>
-            </section>
-          </div>
-        </div>
-
-        <Link href="/" className="text-lg text-blue-500 hover:underline">
-          Back to Projects{" "}
-        </Link>
+const Challenge: React.FC<{
+  challenges: string;
+  solution: string;
+}> = ({ challenges, solution }) => (
+  <Card>
+    <CardContent className="p-6 space-y-4">
+      <div>
+        <h3 className="text-lg font-bold text-red-500">Challenge</h3>
+        {challenges.map((data) => (
+          <li key={data} className="text-muted-foreground">
+            {data}
+          </li>
+        ))}
       </div>
-    </section>
+      <div>
+        {" "}
+        <h4 className="text-md font-bold text-green-500">Solution:</h4>
+        {solution.map((data) => (
+          <li key={data} className="text-muted-foreground">
+            {data}
+          </li>
+        ))}
+      </div>
+    </CardContent>
+  </Card>
+);
+
+// TODO: fix image carousel issue and change layout ui
+export default function CaseStudy({
+  caseStudyData,
+}: {
+  caseStudyData: CaseStudyProp;
+}) {
+  return (
+    <div className="min-h-screen container mx-auto  p-6 md:p-12 space-y-12">
+      <>
+        <Section title="">
+          <h1 className="text-4xl font-bold tracking-tight text-center">
+            {caseStudyData.title}
+          </h1>
+          <p className="text-xl text-muted-foreground text-center">
+            {caseStudyData.moto}
+          </p>
+        </Section>
+
+        <ImageCarousel images={caseStudyData.image} />
+
+        <Section title="Project Overview" delay={0.4}>
+          <p className="text-muted-foreground">{caseStudyData.description}</p>
+        </Section>
+
+        <Section title="Technologies Used" delay={0.6}>
+          <TechStack technologies={caseStudyData.stack} />
+        </Section>
+
+        <Section title="Challenges and Solutions" delay={0.8}>
+          {caseStudyData.challengesAndSolutions.map((data) => {
+            return (
+              <Challenge
+                key={data.challenge + data.solution}
+                challenges={data.challenge}
+                solution={data.solution}
+              />
+            );
+          })}
+        </Section>
+
+        <Section title="Key Features" delay={1}>
+          <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+            {caseStudyData.features.map((data) => (
+              <li key={data}>{data}</li>
+            ))}
+          </ul>
+        </Section>
+
+        <Section title="Results and Impact" delay={1.2}>
+          <p className="text-muted-foreground">
+            {caseStudyData.resultsAndImpact}
+          </p>
+        </Section>
+
+        <Section title="Lessons Learned" delay={1.4}>
+          <p className="text-muted-foreground">
+            {caseStudyData.lessonsLearned}
+          </p>
+        </Section>
+
+        <motion.div
+          variants={fadeInUp}
+          transition={{ duration: 0.5, delay: 1.6 }}
+          className="flex flex-wrap justify-center gap-4"
+        >
+          <Link href={caseStudyData.url.github} target="_blank">
+            <Button className="gap-2 text-slate-50">
+              View Source Code
+              <Github className="size-4" />
+            </Button>
+          </Link>
+          <Link href={caseStudyData.url.live} target="_blank">
+            <Button className="gap-2 text-slate-50 bg-indigo-600">
+              View Live Project
+              <ExternalLink className="size-4" />
+            </Button>
+          </Link>
+        </motion.div>
+
+        {/* <motion.div
+          variants={fadeInUp}
+          transition={{ duration: 0.5, delay: 1.8 }}
+          className="flex justify-between items-center pt-8 border-t"
+        >
+          <Button variant="ghost" className="gap-2">
+            Previous Project
+          </Button>
+          <Button variant="ghost" className="gap-2">
+            Next Project
+          </Button>
+        </motion.div> */}
+      </>
+    </div>
   );
 }

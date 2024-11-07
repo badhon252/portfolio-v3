@@ -10,7 +10,6 @@ import {
 import Link from "next/link";
 import { Badge } from "components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "components/ui/card";
-import { ScrollArea } from "components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "components/ui/tabs";
 
 export default function About() {
@@ -28,7 +27,7 @@ export default function About() {
   };
 
   return (
-    <ScrollArea className="h-screen bg-slate-50 text-black dark:bg-slate-800 dark:text-slate-50">
+    <header className="min-h-screen bg-slate-50 text-black dark:bg-slate-800 dark:text-slate-50">
       <section className="px-4 py-12 md:py-24">
         <motion.div
           className="container mx-auto max-w-3xl space-y-8"
@@ -177,6 +176,6 @@ export default function About() {
           </motion.div>
         </motion.div>
       </section>
-    </ScrollArea>
+    </header>
   );
 }

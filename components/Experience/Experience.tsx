@@ -1,17 +1,12 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronRight, Download, Terminal } from "lucide-react";
+import { ArrowDown, ArrowUp, ChevronRight, Terminal } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "components/ui/button";
 import { Card, CardContent } from "components/ui/card";
 import { ScrollArea } from "components/ui/scroll-area";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "components/ui/tooltip";
+import { useMediaQuery } from "hooks/use-media-query";
 
 interface ExperienceDetails {
   companyName: string;
@@ -50,12 +45,15 @@ export default function Experience() {
   );
   const [typedText, setTypedText] = useState("");
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [isTyping, setIsTyping] = useState(false);
   const terminalRef = useRef<HTMLPreElement>(null);
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   const handleCompanyClick = (company: string) => {
     setSelectedCompany(company);
     setTypedText("");
     setCurrentTextIndex(0);
+    setIsTyping(true);
   };
 
   useEffect(() => {
@@ -78,6 +76,8 @@ export default function Experience() {
         setCurrentTextIndex((prev) => prev + 1);
       }, 20);
       return () => clearTimeout(timeout);
+    } else {
+      setIsTyping(false);
     }
   }, [selectedCompany, currentTextIndex]);
 
@@ -93,62 +93,70 @@ export default function Experience() {
     );
 
     if (e.key === "ArrowUp" && currentIndex > 0) {
-      // Check if the previous index is within bounds
-      const previousExperience = experienceDetails[currentIndex - 1];
-      if (previousExperience) {
-        handleCompanyClick(previousExperience.companyName);
-      }
+      handleCompanyClick(experienceDetails[currentIndex - 1].companyName);
     } else if (
       e.key === "ArrowDown" &&
       currentIndex < experienceDetails.length - 1
     ) {
-      // Check if the next index is within bounds
-      const nextExperience = experienceDetails[currentIndex + 1];
-      if (nextExperience) {
-        handleCompanyClick(nextExperience.companyName);
-      }
+      handleCompanyClick(experienceDetails[currentIndex + 1].companyName);
     }
   };
 
   return (
     <main
-      className="min-h-screen flex justify-center items-center bg-gradient-to-b y-12 bg-slate-50 dark:bg-slate-800"
+      className="min-h-screen flex justify-center items-center bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 py-12 px-4 sm:px-6 lg:px-8"
       onKeyDown={handleKeyDown}
       tabIndex={0}
     >
-      <section id="experience" className="container mx-auto px-4 md:px-6 ">
-        <h1 className="mb-12 text-center text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl ">
+      <section id="experience" className="w-full max-w-7xl mx-auto">
+        <h1 className="mb-12 text-center text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl text-slate-800 dark:text-slate-200">
           &lt;Experiences /&gt;
         </h1>
         <div className="grid gap-8 md:grid-cols-[1fr_2fr]">
-          <Card className=" shadow-lg bg-slate-100 dark:bg-slate-800 ">
-            <ScrollArea className="h-[300px] md:h-[400px]">
-              <div className="p-4">
-                {experienceDetails.map((experience) => (
+          <Card className="shadow-lg bg- dark:bg-slate-800 border-slate-200 dark:border-slate-700 ">
+            <ScrollArea className="h-[200px] md:h-[400px]">
+              <div className="p-4 space-y-2">
+                {experienceDetails.map((experience, index) => (
                   <Button
                     key={experience.companyName}
                     variant={
                       selectedCompany === experience.companyName
-                        ? "default"
+                        ? "primary"
                         : "ghost"
                     }
-                    className="w-full justify-start gap-2 rounded-lg py-6 text-left dark:text-white hover:bg-bg-black hover:bg-blue-50 focus:text-blue-500"
+                    className="w-full justify-start gap-2 rounded-lg py-4 text-left transition-all duration-200 ease-in-out hover:bg-slate-100 dark:hover:bg-slate-700 "
                     onClick={() => handleCompanyClick(experience.companyName)}
                   >
                     <ChevronRight
-                      className={`size-4 transition-transform ${
+                      className={`size-4 transition-transform duration-200 ${
                         selectedCompany === experience.companyName
-                          ? "rotate-90 text-blue-600"
+                          ? "rotate-90 text-blue-600 dark:text-blue-400"
                           : ""
                       }`}
                     />
-                    <p className="data-[state=active]:text-white">
+                    <p
+                      className={`${
+                        selectedCompany === experience.companyName
+                          ? "text-blue-600 dark:text-blue-400 font-semibold"
+                          : "text-slate-700 dark:text-slate-300"
+                      }`}
+                    >
                       {experience.companyName}
                     </p>
                   </Button>
                 ))}
               </div>
             </ScrollArea>
+            {!isMobile && (
+              <div className="p-4 border-t border-slate-200 dark:border-slate-700 flex justify-between text-sm text-slate-500 dark:text-slate-400">
+                <div className="flex items-center">
+                  <ArrowUp className="size-4 mr-1" /> Previous
+                </div>
+                <div className="flex items-center">
+                  Next <ArrowDown className="size-4 ml-1" />
+                </div>
+              </div>
+            )}
           </Card>
           <AnimatePresence mode="wait">
             <motion.div
@@ -158,42 +166,37 @@ export default function Experience() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <Card className="bg-gray-900 border-blue-200 shadow-lg">
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-4">
+              <Card className="bg-slate-900 border-blue-500/20 shadow-lg overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="flex items-center justify-between p-4 bg-slate-800 border-b border-slate-700">
                     <div className="flex items-center">
                       <Terminal className="mr-2 size-5 text-blue-400" />
-                      <span className="text-blue-400 font-mono">
+                      <span className="text-blue-400 font-mono text-sm">
                         experience.sh
                       </span>
                     </div>
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <Button
-                            variant="outline"
-                            size="icon"
-                            className="size-8"
-                          >
-                            <Download className="size-4 text-blue-400" />
-                            <span className="sr-only">Download Resume</span>
-                          </Button>
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>Download Resume</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
+                    <div className="flex space-x-2">
+                      <div className="size-3 rounded-full bg-red-500" />
+                      <div className="size-3 rounded-full bg-yellow-500" />
+                      <div className="size-3 rounded-full bg-green-500" />
+                    </div>
                   </div>
                   <ScrollArea className="h-[400px] md:h-[500px]">
                     <pre
                       ref={terminalRef}
-                      className="font-mono text-green-400 whitespace-pre-wrap break-words"
+                      className="font-mono text-sm text-green-400 p-4 whitespace-pre-wrap break-words"
                     >
                       <code>{typedText}</code>
                     </pre>
                   </ScrollArea>
-                  <div className="mt-4 h-4 w-2 bg-green-400 animate-pulse" />
+                  <div className="p-4 border-t border-slate-700 flex items-center">
+                    <span className="text-green-400 mr-2">$</span>
+                    <div
+                      className={`h-4 w-2 bg-green-400 ${
+                        isTyping ? "animate-pulse" : ""
+                      }`}
+                    />
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>

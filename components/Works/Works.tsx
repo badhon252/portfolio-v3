@@ -10,7 +10,7 @@ export default function Work() {
       <main className="container mx-auto md:w-4/6">
         <div className="work-title bg-work py-16 text-center">
           <h1 className="text-4xl font-black md:text-6xl lg:text-8xl">Works</h1>
-          <h2 className="text-purple-500 inline-block font-medium px-4 tracking-widest">
+          <h2 className="text-indigo-500 inline-block font-medium px-4 tracking-widest">
             Project | Collaboration | Exploration
           </h2>
         </div>
