@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
@@ -93,12 +95,18 @@ export default function Experience() {
     );
 
     if (e.key === "ArrowUp" && currentIndex > 0) {
-      handleCompanyClick(experienceDetails[currentIndex - 1].companyName);
+      const previousCompany = experienceDetails[currentIndex - 1];
+      if (previousCompany) {
+        handleCompanyClick(previousCompany.companyName);
+      }
     } else if (
       e.key === "ArrowDown" &&
       currentIndex < experienceDetails.length - 1
     ) {
-      handleCompanyClick(experienceDetails[currentIndex + 1].companyName);
+      const nextCompany = experienceDetails[currentIndex + 1];
+      if (nextCompany) {
+        handleCompanyClick(nextCompany.companyName);
+      }
     }
   };
 
@@ -121,7 +129,7 @@ export default function Experience() {
                     key={experience.companyName}
                     variant={
                       selectedCompany === experience.companyName
-                        ? "primary"
+                        ? "ghost" // Use "ghost" instead of "primary"
                         : "ghost"
                     }
                     className="w-full justify-start gap-2 rounded-lg py-4 text-left transition-all duration-200 ease-in-out hover:bg-slate-100 dark:hover:bg-slate-700 "

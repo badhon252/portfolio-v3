@@ -1,5 +1,5 @@
 // assets for icons
-import { StaticImageData } from "next/image";
+import { CaseStudyProp } from "components/types/CaseStudy";
 import gitIcon from "public/Assets/image/git.svg";
 import nextIcon from "public/Assets/image/Nextjs.svg";
 import prismaIcon from "public/Assets/image/prisma.svg";
@@ -10,46 +10,11 @@ import typescriptIcon from "public/Assets/image/typescript.svg";
 import dashboardImage from "public/Assets/projects/dashboard.gif";
 import prismaStoreImage from "public/Assets/projects/prisma-store.gif";
 import promptopiaImage from "public/Assets/projects/promptopia.gif";
-import readatAbout from "public/Assets/readat/about.png";
 import readatHome from "public/Assets/readat/home.png";
 
-interface CaseStudy {
-  slug: string;
-  title: string;
-  moto: string;
-  description: string;
-  challengesAndSolutions: {
-    challenge: string[];
-    solution: string[];
-  }[];
-  color: string;
-  features: string[];
-  resultsAndImpact: string;
-  lessonsLearned: string;
-  installation: {
-    steps: string[];
-  };
-  structure: {
-    navigation: string[];
-    heroSection: string;
-    categories: string[];
-    categoryPages: string;
-  };
-  image: StaticImageData;
-  logo: StaticImageData;
-  tech: string[];
-  stack: string[];
-  url: {
-    study: string;
-    github: string;
-    live: string;
-  };
-  serial: string;
-}
-
-const caseStudiesData: CaseStudy[] = [
+const caseStudiesData: CaseStudyProp[] = [
   {
-    serial: "1",
+    serial: 1,
     slug: "readat",
     title: "ReadAT (ACONEWS)",
     moto: "Simplifying Digital News Accessibility Across Devices",
@@ -122,7 +87,7 @@ const caseStudiesData: CaseStudy[] = [
   },
 
   {
-    serial: "2",
+    serial: 2,
     slug: "prisma-store",
     title: "Prisma-Store",
     moto: "Simplifying Digital Commerce to Drive Businesses!",
@@ -196,7 +161,7 @@ const caseStudiesData: CaseStudy[] = [
   },
 
   {
-    serial: "3",
+    serial: 3,
     slug: "promptopia",
     title: "Promptopia",
     moto: "Generate and share prompts to excell your future!",
@@ -259,7 +224,7 @@ const caseStudiesData: CaseStudy[] = [
     },
   },
   {
-    serial: "4",
+    serial: 4,
     slug: "monitoring-dashboard",
     title: "Monitoring Dashboard",
     moto: "Monitor and take important decisions on cyber threat!",

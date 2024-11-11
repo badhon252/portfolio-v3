@@ -11,7 +11,7 @@ export default function LoadingUI() {
   useEffect(() => {
     const timer = setInterval(() => {
       setStage((prevStage) => (prevStage < 4 ? prevStage + 1 : prevStage));
-    }, 1000); // Change stage every 1.5 seconds
+    }, 100); // Change stage every 1.5 seconds
 
     return () => clearInterval(timer);
   }, []);

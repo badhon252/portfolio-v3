@@ -47,8 +47,8 @@ const TechStack: React.FC<{ technologies: string[] }> = ({ technologies }) => (
 );
 
 const Challenge: React.FC<{
-  challenges: string;
-  solution: string;
+  challenges: string[];
+  solution: string[];
 }> = ({ challenges, solution }) => (
   <Card>
     <CardContent className="p-6 space-y-4">
@@ -105,7 +105,7 @@ export default function CaseStudy({
           {caseStudyData.challengesAndSolutions.map((data) => {
             return (
               <Challenge
-                key={data.challenge + data.solution}
+                key={data.challenge.join(",") + data.solution.join(",")}
                 challenges={data.challenge}
                 solution={data.solution}
               />

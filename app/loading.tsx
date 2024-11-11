@@ -1,9 +1,7 @@
-import LoadingUI from "components/Loading/loading";
-
 export default function loading() {
   return (
-    <div>
-      <LoadingUI />
+    <div className="flex justify-center items-center h-screen">
+      <h1 className="text-4xl font-semibold">Loading ...</h1>
     </div>
   );
 }

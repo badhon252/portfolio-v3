@@ -1,12 +1,15 @@
+import { StaticImageData } from "next/image";
 interface CaseStudyProp {
+  serial: number;
   slug: string;
   title: string;
   moto: string;
   description: string;
   challengesAndSolutions: {
     challenge: string[];
-    solution: string;
+    solution: string[];
   }[];
+  color: string;
   features: string[];
   resultsAndImpact: string;
   lessonsLearned: string;
@@ -19,7 +22,8 @@ interface CaseStudyProp {
     categories: string[];
     categoryPages: string;
   };
-  image: string;
+  image: StaticImageData;
+  logo: StaticImageData;
   tech: string[];
   stack: string[];
   url: {
@@ -27,7 +31,6 @@ interface CaseStudyProp {
     github: string;
     live: string;
   };
-  serial: string;
 }
 
 export type { CaseStudyProp };

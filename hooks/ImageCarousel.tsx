@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Button } from "components/ui/button";
 
-export const ImageCarousel: React.FC<{ images: string }> = ({ images }) => {
+export const ImageCarousel: React.FC<{ images: any }> = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
@@ -26,7 +26,7 @@ export const ImageCarousel: React.FC<{ images: string }> = ({ images }) => {
       }
     },
     [isModalOpen],
-  ); // Add isModalOpen to dependency array
+  );
 
   useEffect(() => {
     const currentRef = modalRef.current;

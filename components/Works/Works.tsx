@@ -1,5 +1,4 @@
-import caseStudies from "components/CaseStudy/caseStudiesData"; // Import the data
-import Project from "./Project"; // Import the Project component
+import InteractivePortfolioShowcase from "./ProjectShowcase";
 
 export default function Work() {
   return (
@@ -15,18 +14,7 @@ export default function Work() {
           </h2>
         </div>
         <div className="my-projects">
-          {/* Loop through each case study and render a Project component */}
-          {caseStudies.map((study) => (
-            <Project
-              key={study.slug}
-              img={study.image}
-              title={study.title}
-              desc={study.description}
-              serial={study.serial}
-              tech={study.tech}
-              urls={[study.url.study, study.url.github, study.url.live]}
-            />
-          ))}
+          <InteractivePortfolioShowcase />
         </div>
         <div className="mx-auto text-center p-16">
           <a

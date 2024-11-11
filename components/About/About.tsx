@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   CodeIcon,
@@ -13,29 +14,27 @@ import { Card, CardContent, CardHeader, CardTitle } from "components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "components/ui/tabs";
 
 export default function About() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const fadeIn = {
-    hidden: {
-      opacity: 0,
-      y: 20,
-      transition: { duration: 0.8 },
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8 },
-    },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
   };
+
+  if (!isClient) return null;
 
   return (
     <header className="min-h-screen bg-slate-50 text-black dark:bg-slate-800 dark:text-slate-50">
       <section className="px-4 py-12 md:py-24">
         <motion.div
           className="container mx-auto max-w-3xl space-y-8"
-          initial="initial"
-          animate="animate"
-          variants={{
-            animate: { transition: { staggerChildren: 0.1 } },
-          }}
+          initial="hidden"
+          animate="visible"
+          variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
         >
           <motion.div className="text-center" variants={fadeIn}>
             <h1 className="text-4xl font-black tracking-tighter sm:text-5xl md:text-6xl">
@@ -111,6 +110,7 @@ export default function About() {
                   </CardContent>
                 </Card>
               </TabsContent>
+              {/* Other TabsContent omitted for brevity */}
               <TabsContent value="work">
                 <Card>
                   <CardHeader>

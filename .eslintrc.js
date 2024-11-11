@@ -26,6 +26,7 @@ module.exports = {
         varsIgnorePattern: "^_",
       },
     ],
+    // "@typescript-eslint/no-unused-vars": "off",
     "sort-imports": [
       "error",
       {

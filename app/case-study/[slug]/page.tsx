@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { FC } from "react";
 import CaseStudy from "components/CaseStudy/case-study";
 import caseStudies from "components/CaseStudy/caseStudiesData";
-import { CaseStudyProp } from "components/types/CaseStudy";
 
 interface CaseStudyPageProps {
   params: {
@@ -13,9 +12,7 @@ interface CaseStudyPageProps {
 const CaseStudyPage: FC<CaseStudyPageProps> = ({ params }) => {
   const { slug } = params;
 
-  const caseStudy: CaseStudyProp | undefined = caseStudies.find(
-    (study) => study.slug === slug,
-  );
+  const caseStudy = caseStudies.find((study) => study.slug === slug);
 
   if (!caseStudy) {
     notFound(); // Trigger a 404 if the case study is not found
