@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-no-duplicate-props */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 "use client";
 
 import { motion, useMotionValue, useTransform } from "framer-motion";
@@ -39,24 +36,24 @@ const MagneticCard: React.FC<MagneticCardProps> = ({
   const rotateX = useTransform(y, [-100, 100], [30, -30]);
   const rotateY = useTransform(x, [-100, 100], [-30, 30]);
 
-  const handleMouseMove = useCallback(
-    (event: MouseEvent) => {
-      if (cardRef.current) {
-        const rect = cardRef.current.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        const distanceX = event.clientX - centerX;
-        const distanceY = event.clientY - centerY;
+  // const handleMouseMove = useCallback(
+  //   (event: MouseEvent<HTMLDivElement>) => {
+  //     if (cardRef.current) {
+  //       const rect = cardRef.current.getBoundingClientRect();
+  //       const centerX = rect.left + rect.width / 2;
+  //       const centerY = rect.top + rect.height / 2;
+  //       const distanceX = event.clientX - centerX;
+  //       const distanceY = event.clientY - centerY;
 
-        // Update motion values using requestAnimationFrame
-        requestAnimationFrame(() => {
-          x.set(distanceX);
-          y.set(distanceY);
-        });
-      }
-    },
-    [x, y],
-  );
+  //       // Update motion values using requestAnimationFrame
+  //       requestAnimationFrame(() => {
+  //         x.set(distanceX);
+  //         y.set(distanceY);
+  //       });
+  //     }
+  //   },
+  //   [x, y],
+  // );
 
   const handleMouseLeave = useCallback(() => {
     x.set(0);
@@ -80,12 +77,11 @@ const MagneticCard: React.FC<MagneticCardProps> = ({
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       onClick={onClick}
-      onMouseMove={handleMouseMove}
+      onMouseMove={() => []}
       onMouseLeave={handleMouseLeave}
       className={`cursor-pointer bg-slate-800 dark:bg-slate-950 text-gray-100 rounded-xl overflow-hidden shadow-xl transition-colors border-indigo-600 duration-300  ${
         isActive ? "border-4" : "border"
-      } border-${project.color} `}
-      style={{ pointerEvents: "auto" }}
+      } { pointerEvents: "auto" } `}
     >
       <div className="relative h-48">
         <Image

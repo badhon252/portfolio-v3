@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   CodeIcon,
@@ -9,6 +8,7 @@ import {
   RocketIcon,
 } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { Badge } from "components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "components/ui/tabs";

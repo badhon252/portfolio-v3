@@ -124,7 +124,7 @@ export default function Experience() {
           <Card className="shadow-lg bg- dark:bg-slate-800 border-slate-200 dark:border-slate-700 ">
             <ScrollArea className="h-[200px] md:h-[400px]">
               <div className="p-4 space-y-2">
-                {experienceDetails.map((experience, index) => (
+                {experienceDetails.map((experience) => (
                   <Button
                     key={experience.companyName}
                     variant={
