@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import Work from "components/Works/Works";
+import InteractivePortfolioShowcase from "components/Works/ProjectShowcase";
 export default function HeroSection() {
   return (
     <section>
@@ -9,7 +9,7 @@ export default function HeroSection() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <Work />
+        <InteractivePortfolioShowcase />
       </motion.div>
     </section>
   );

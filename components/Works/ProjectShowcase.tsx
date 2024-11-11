@@ -1,13 +1,15 @@
+/* eslint-disable react/jsx-no-duplicate-props */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 "use client";
 
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import caseStudiesData from "components/CaseStudy/caseStudiesData";
 
-// Define the MagneticCardProps interface
 interface MagneticCardProps {
   project: {
     serial: number;
@@ -31,29 +33,35 @@ const MagneticCard: React.FC<MagneticCardProps> = ({
   isActive,
   onClick,
 }) => {
-  const cardRef = useRef<HTMLDivElement>(null); // Type the ref correctly
+  const cardRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const rotateX = useTransform(y, [-100, 100], [30, -30]);
   const rotateY = useTransform(x, [-100, 100], [-30, 30]);
 
-  const handleMouse = (event: any) => {
-    if (cardRef.current) {
-      const rect = cardRef.current.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-      const distanceX = event.clientX - centerX;
-      const distanceY = event.clientY - centerY;
+  const handleMouseMove = useCallback(
+    (event: MouseEvent) => {
+      if (cardRef.current) {
+        const rect = cardRef.current.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const distanceX = event.clientX - centerX;
+        const distanceY = event.clientY - centerY;
 
-      x.set(distanceX);
-      y.set(distanceY);
-    }
-  };
+        // Update motion values using requestAnimationFrame
+        requestAnimationFrame(() => {
+          x.set(distanceX);
+          y.set(distanceY);
+        });
+      }
+    },
+    [x, y],
+  );
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     x.set(0);
     y.set(0);
-  };
+  }, [x, y]);
 
   return (
     <motion.div
@@ -64,7 +72,7 @@ const MagneticCard: React.FC<MagneticCardProps> = ({
         rotateX,
         rotateY,
         z: 100,
-        borderColor: project?.color,
+        borderColor: project.color,
       }}
       drag
       dragElastic={0.16}
@@ -72,11 +80,12 @@ const MagneticCard: React.FC<MagneticCardProps> = ({
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       onClick={onClick}
-      onMouseOver={handleMouse}
+      onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`cursor-pointer bg-white rounded-xl overflow-hidden shadow-xl transition-colors duration-300 ${
+      className={`cursor-pointer bg-slate-800 dark:bg-slate-950 text-gray-100 rounded-xl overflow-hidden shadow-xl transition-colors border-indigo-600 duration-300  ${
         isActive ? "border-4" : "border"
-      }`}
+      } border-${project.color} `}
+      style={{ pointerEvents: "auto" }}
     >
       <div className="relative h-48">
         <Image
@@ -84,7 +93,7 @@ const MagneticCard: React.FC<MagneticCardProps> = ({
           alt={project.title}
           className="size-full object-cover"
         />
-        <div className="absolute top-2 left-2 bg-white rounded-full p-1">
+        <div className="absolute top-2 left-2  rounded-full p-1">
           <Image
             src={project.logo}
             alt={`${project.title} logo`}
@@ -96,7 +105,7 @@ const MagneticCard: React.FC<MagneticCardProps> = ({
         <h3 className="text-xl font-bold mb-2" style={{ color: project.color }}>
           {project.title}
         </h3>
-        <p className="text-gray-600 mb-4">{project.description}</p>
+        <p className="text-gray-100  mb-4 ">{project.description}</p>
         <a
           href={project.url.live}
           target="_blank"
@@ -132,7 +141,7 @@ export default function InteractivePortfolioShowcase() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {caseStudiesData.map((project) => (
             <MagneticCard
-              key={project.serial.toString()} // Convert serial to string for key
+              key={project.serial.toString()}
               project={project}
               isActive={activeProject === project.serial.toString()}
               onClick={() =>
@@ -145,12 +154,6 @@ export default function InteractivePortfolioShowcase() {
             />
           ))}
         </div>
-        {/* {caseStudiesData.map((project) => (
-          <FloatingParticle
-            key={`particle-${project.serial}`}
-            color={project.color}
-          />
-        ))} */}
       </div>
       {activeProject && (
         <motion.div
@@ -164,7 +167,7 @@ export default function InteractivePortfolioShowcase() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
-            className="bg-white rounded-xl p-8 max-w-2xl w-full mx-4"
+            className="bg-gray-800 rounded-xl p-8 max-w-2xl w-full mx-4"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
@@ -198,7 +201,7 @@ export default function InteractivePortfolioShowcase() {
                 {caseStudiesData[parseInt(activeProject, 10) - 1]?.title}
               </h2>
             </div>
-            <p className="text-xl mb-6 text-gray-600">
+            <p className="text-xl mb-6 text-gray-100">
               {caseStudiesData[parseInt(activeProject, 10) - 1]?.description}
             </p>
             <div className="flex gap-4">
